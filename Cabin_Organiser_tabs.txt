@@ -1,0 +1,138 @@
+Cabin Organiser tabs
+
+Member List + Dates
+Vote Cabin
+Transport
+Items
+Roommates
+Shopping list
+Music
+Activities
+
+
+Web App First Page
+
+Hero Section - 95% of modern websites are using this
+
+Core:
+- What the business does?
+- What services they provide?
+
+Main Headline:	[We will get you this result]
+- Should clearly communicate:
+	- the value
+	- the result
+	- the transformation that you're promising with what you offer.
+	
+Sub Headline:	[And here is how]
+- Is there to support your headline by clearly explaining how  you get them that result
+- In other words.. Now is the time to bring that thing that you offer
+
+- Check marks under the SubHeadline that are:
+	- Results that they can expect
+	- Different use cases for what you offer
+	
+Call To Action Button:
+- Is there to give anyone who's ready to go a really clear easy path forward to getting start working with
+
+- Should be really prominent and bold so it's extremely obvious where they need to click next
+- Should be word it to be really actionable and specific so it should NEVER be something like contact us or learn more
+- It should be very descriptive of actually what it comes next
+
+Image:
+- People will look at the main image on a website for nearly 6 seconds on average
+- Very important that you can emotionally connect with the most people
+- Should be real representation of the happy after state that your customers are feeling
+- Should be really natural and overall positive
+
+If you are a service business just show that happy feeling in some kind of context so
+people should be able to visualize themselves having the happy feeling
+
+
+Problem/Solution section - 2 or 3 short paragraphs that lay out the problem that your customer is likely experiencing right now
+
+
+To do this right: [Dog Training Example]
+- use the tried and true what marketers csll the Pain agitate solution copywriting framework here
+
+1st Main Pain Point
+- something like you know.. you love your dog, but let's face it.. he's a bit much
+
+2nd Agitate with examples
+- then you will agitate that pain with bringing up examples of bad behaviour like
+	- maybe he's hard to take on walks
+	- to do friendly restaurant patios
+	- he's always jumping up on your friends
+	- and maybe you've even had trouble keeping dog sitters as a result
+	
+3rd Introduce your solution
+- but not to worry because here's our solution that's going to turn it all around
+
+
+1,2,3 paragraphs pro tips:
+
+Make the first paragraph's text a little bit bigger than normal
+- reason is there was a recent eye tracking study that showed when test subjects saw a story with a bold or larger introductory paragraph,
+95% of them viewed all or part of it which is a lot more than you'll see for typical texts on website especially when it's several paragraphs long like this
+- so you bring them in with a larger text and then if you write it well enough and you lay out the pain points right, that will pull them all the way through the rest of it
+
+- pair the text with a really short video for your business along side of it
+	- something that hits on the problem you solve and how
+	- will help you be more memorable and trustworthy
+	- it keeps people on your page longer which is great Google signal to help you rank higher in Search
+	- pages with video on them increase conversions by 86% on average.
+
+
+Benefits section
+
+You just want to call out three main benefits that your customer can expect from you.
+[Very important!]
+- because this is where you'll try to set yourself apart from your competitors by either:
+	- bringing up extras or perks that you bring and your competition doesn't
+	- maybe these are the things they do too but if you're the one talking about it and they're not, the end result's the same.
+- benefits tend to trip people up because they always confuse them with features 
+
+So..
+1st List out your most compelling 3 benefits
+2nd Go into the features that makes the benefits possible
+3rd Some kind of a visual that helps illustrate each benefit (photos / icons)
+
+
+Testimonials section
+
+Social proof like this so that people can see proof that what you're claiming is true
+- 72% of consumers will take action only after reading a positive review
+- rule of three:
+	- recommended to find three testimonials that do a really good job saying something that's going to help someone overcome:
+		- an objection (they may have)
+		- speak to one of your benefits
+		- results
+	- keep them really short
+	- include their photo if you can get their permision to use it
+	- use a 5 star.
+
+
+Features section
+
+This is the part where we let t ytical people who really just need to justify their emotional buy-in by seeing exactly what they're gonna get.
+
+- bullet list / check list / with icons for each one.
+
+
+FAQs section	
+
+Proactively answer common questions that people ask you all the time.
+But more importantly this is the place to proactively handle objections that they may have too.
+
+What are the top five or six questions that people need answered or objections that they need settled before they'll feel comfortable taking the next step?
+- Just write each one out as a question then address each one with your answer.
+- If it is an objection -> what's your best rebuttal against that objection.
+- Keep them really short
+- This is another great use case for video on your homepage
+- If you create a really short video for each FAQ with your best answer for it, that's going to:
+	- build even more trust and get you even closer to that sale or book.
+	
+Call To Action section
+
+A really simple call to action section where you simply ask them if they're ready to get started.
+And repeat the same call to action button here as you had up in the hero section.
