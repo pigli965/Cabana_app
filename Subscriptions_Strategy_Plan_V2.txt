@@ -1,0 +1,75 @@
+Absolutely! Let's summarize the comprehensive subscription strategy plan for both guests and hosts, considering all the features and adjustments we've discussed:
+
+**Guest Subscription Strategy:**
+
+**Freemium Model for Guests:**
+
+- **Free Guest Tier**:
+  - Duration: Always available
+  - Features:
+    - Ability to save favorite cabins.
+    - Receive notifications of new cabin listings.
+    - Limited access to other app features.
+  - Price: Free
+
+**Time-Based Guest Subscription Tiers with Feature X Access:**
+
+1. **Monthly Guest Subscription**: 
+   - Duration: Monthly
+   - Features:
+     - Full access to cabin listings and search filters.
+     - Unlimited ability to save favorite cabins.
+     - Priority notifications of new cabin listings.
+     - Full access to feature X.
+   - Price: $1.50 per month.
+
+2. **Yearly Guest Subscription**: 
+   - Duration: Yearly
+   - Features:
+     - All features of the Monthly Guest Subscription.
+     - Discounted annual price.
+   - Price: $15.00 per year (equivalent to $1.25 per month).
+
+**Host Subscription Strategy:**
+
+**Freemium Model for Hosts:**
+
+- **Free Host Tier**:
+  - Duration: Always available
+  - Features:
+    - Ability to list up to 1 cabin.
+    - Basic visibility in search results.
+    - Access to messaging guests.
+    - Limited support.
+  - Price: Free
+
+**Paid Host Subscription Tiers with Automated Cabin Management:**
+
+1. **Basic Host Subscription**: 
+   - Duration: Monthly
+   - Features:
+     - Ability to list up to 3 cabins.
+     - Basic visibility in search results.
+     - Access to messaging guests.
+     - Automated Manage & Track Your Cabins Feature.
+   - Price: $9.99 per month.
+
+2. **Premium Host Subscription**: 
+   - Duration: Monthly or Yearly
+   - Features:
+     - Ability to list unlimited cabins.
+     - Enhanced visibility in search results.
+     - Featured listings for increased exposure.
+     - Advanced messaging tools.
+     - Automated Manage & Track Your Cabins Feature.
+   - Price: 
+     - Monthly: $19.99 per month.
+     - Yearly: $199.99 per year (equivalent to $16.67 per month).
+
+**Additional Feature: Cabin Themes for Hosts**
+
+- Access to cabin themes is available exclusively for hosts who subscribe to any of the paid host subscription tiers.
+
+This subscription strategy plan balances free access with premium features for both guests and hosts, ensuring that users receive value while justifying the cost of subscriptions. Guests benefit from feature X, while hosts gain access to an efficient cabin management system. Themes for cabin posts are available as a premium feature to subscribing hosts, enhancing the visual appeal of their listings.
+
+By implementing this strategy, you aim to attract, engage, and retain users while generating revenue from those who seek enhanced features and benefits on your cabin rental mobile app.
