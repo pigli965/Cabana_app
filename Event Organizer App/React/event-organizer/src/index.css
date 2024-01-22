@@ -4,11 +4,17 @@
 
 :root {
   --primary-bg: #242526;
-  --secondary-bg: #a1c973;
+  --secondary-bg: #90d9d3;
   --primary-text-color: #000000;
   --secondary-text-color: #000000;
+  --cards-background-color: #dfdec9;
   --border-radius: 8px;
+  --cards-border-radius: 30px;
   --speed: 500ms;
+  --home-upper-card-height: 360px;
+  --home-upper-card-width: 550px;
+  --home-lower-card-height: 420px;
+  --home-lower-card-width: 330px;
 }
 
 body {
@@ -39,9 +45,21 @@ a{
 
 .side-bar{
   width: 200px;
-  height: 100vh;
+  height: 92vh;
   z-index: 2;
   background-color: var(--secondary-bg);
+}
+
+.footer-item{
+  position: absolute;
+  height: var(--footer-space);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #bfbfbf;
+  text-decoration-color: #fff;
+  text-align: center;
+  z-index: 3;
 }
 
 .content {
@@ -66,7 +84,10 @@ a{
 
 .side-barItem a{
   max-width: 200px;
+  width: 200px;
   margin-left: 10px;
+  padding: 5px;
+  font-weight: bold;
   opacity: 0.8;
   transition: var(--speed);
 }
@@ -85,6 +106,12 @@ a{
   top: 11px;
   right: 230px;
   font-size: large;
+  opacity: 0.8;
+}
+
+.home-trigger:hover a{
+  color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
 .about-trigger a{
@@ -92,6 +119,12 @@ a{
   top: 11px;
   right: 150px;
   font-size: large;
+  opacity: 0.8;
+}
+
+.about-trigger:hover a{
+  color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
 .contact-trigger a{
@@ -99,6 +132,12 @@ a{
   top: 11px;
   right: 60px;
   font-size: large;
+  opacity: 0.8;
+}
+
+.contact-trigger:hover a{
+  color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
 .menu-trigger img{
@@ -199,17 +238,81 @@ h3 span{
 }
 
 .home-container {
-  display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
-  height: calc(100vh - (15px + 16px)); /* Adjust for the height of the header and footer */
-  margin-left: 200px; /* Adjust for the width of the sidebar */
+  background-color: #ffffff;
+  width: 112%;
+  height: 92vh;
+  padding: 10px;
 }
 
-.about-us-container {
+.upper-card-container,
+.lower-card-container {
   display: flex;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
-  height: calc(100vh - (15px + 6px)); /* Adjust for the height of the header and footer */
-  margin-left: 200px; /* Adjust for the width of the sidebar */
+  width: 100%;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.upper-card {
+  width: var(--home-upper-card-width); /* Adjust the width of upper cards */
+  height: var(--home-upper-card-height);
+  /* Adjust the height of upper cards based on the available space */
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: 10px;
+  border-radius: var(--cards-border-radius);
+  transition: box-shadow 0.3s ease;
+  background-color: var(--cards-background-color);
+}
+
+.lower-card {
+  width: var(--home-lower-card-width); /* Adjust the width of lower cards */
+  height: var(--home-lower-card-height);
+  /* Adjust the height of lower cards based on the available space */
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: 10px;
+  border-radius: var(--cards-border-radius);
+  transition: box-shadow 0.3s ease;
+  background-color: var(--cards-background-color);
+}
+
+.upper-card:hover,
+.lower-card:hover {
+  box-shadow: 0 0 15px rgba(1, 253, 245, 0.8);
+}
+
+.upper-card-title {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.lower-card-title {
+  font-size: 2.7em;
+  margin-bottom: 10px;
+}
+
+.upper-card-image {
+  width: 50%; /* Set the image width to 60% of the container */
+  height: auto; /* Maintain the aspect ratio of the image */
+  max-height: 300px; /* Set a maximum height if needed */
+  object-fit: cover; /* Ensure the image covers the entire container */
+  margin-bottom: 0; /* Add margin to the bottom */
+  margin-top: 0px;
+  margin-left: 135px;
+}
+
+.lower-card-image {
+  width: 90%; /* Set the image width to 60% of the container */
+  height: auto; /* Maintain the aspect ratio of the image */
+  max-height: 300px; /* Set a maximum height if needed */
+  object-fit: cover; /* Ensure the image covers the entire container */
+  margin-bottom: 0; /* Add margin to the bottom */
+  margin-top: 50px;
+  margin-left: 17px;
 }

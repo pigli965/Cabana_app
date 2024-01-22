@@ -10,9 +10,9 @@ const Sidebar = () => {
           <SideBarMenu href = "/finance_report/:finance_reportID" text = {"Finance Report"}/>
           <SideBarMenu href = "/location/:locationId" text = {"Location"}/>
           <SideBarMenu href = "/transport/:transportId" text = {"Transport"}/>
-          <SideBarMenu href = "/catering/:cateringID" text = {"Meals & Drinks"}/>
+          <SideBarMenu href = "/catering/:cateringID" text = {"Catering"}/>
           <SideBarMenu href = "/activities/:activitiesId" text = {"Activities"}/>
-          <SideBarMenu href = "/entertainment/:entertainmentId" text = {"DJ & Entertainment"}/>          
+          <SideBarMenu href = "/entertainment/:entertainmentId" text = {"Entertainment"}/>          
         </ul>
       </nav>
     </aside>
