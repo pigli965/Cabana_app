@@ -33,10 +33,20 @@ a{
   text-decoration: none;
 }
 
+.container {
+  display: flex;
+}
+
 .side-bar{
-  width: 250px;
-  height: 850px;
+  width: 200px;
+  height: 100vh;
+  z-index: 2;
   background-color: var(--secondary-bg);
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px; /* Adjust the padding as needed */
 }
 
 .side-bar ul li{
@@ -186,4 +196,20 @@ h3 span{
   margin-left: 10px;
   opacity: 0.8;
   transition: var(--speed);
+}
+
+.home-container {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  height: calc(100vh - (15px + 16px)); /* Adjust for the height of the header and footer */
+  margin-left: 200px; /* Adjust for the width of the sidebar */
+}
+
+.about-us-container {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  height: calc(100vh - (15px + 6px)); /* Adjust for the height of the header and footer */
+  margin-left: 200px; /* Adjust for the width of the sidebar */
 }
