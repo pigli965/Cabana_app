@@ -23,7 +23,7 @@ function App() {
   const [navBar1100, setNavBar1100] = useState(false);
 
   const showNavBar = () => {
-    if (window.innerWidth >= 1500) {
+    if (window.innerWidth > 1500) {
       setNavBar2000(true);
     } else {
       setNavBar2000(false);

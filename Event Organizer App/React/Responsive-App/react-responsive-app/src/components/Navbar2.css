@@ -1,6 +1,6 @@
 .navBar-container { 
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     height: 95px;
     align-items: center;
     position: sticky;
@@ -12,8 +12,15 @@
     margin-right: 0.5%;
     margin-bottom: auto;
     border-radius: 10px;
-    padding: 0.5em;
+    /* padding: 0.5em; */
     background: linear-gradient(90deg, rgba(28, 27, 27, 0.986) 0%, rgba(26, 23, 23, 0.745) 50%);
+}
+
+.navbar-logo img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensures that the image is treated as a block element */
+    margin: 0 auto; /* Centers the image horizontally within the link */
 }
 
 .navbar-logo {
@@ -43,7 +50,7 @@
 
 .navbar-profile-menu {
     display: flex;
-    justify-self: start;
+    justify-content: flex-start;
     align-items: center;
     position: absolute;
     right: 0;
@@ -55,7 +62,7 @@
 
 .navbar-profile-menu:hover {
     display: flex;
-    justify-self: start;
+    justify-self: flex-start;
     align-items: center;
     position: absolute;
     right: 0;
@@ -99,7 +106,6 @@
     height: 300px;
     border-radius: 10px;
     background: linear-gradient(360deg, rgba(28, 27, 27, 0.986) 0%, rgba(26, 23, 23, 0.745) 5%);
-    transition: all 0.5s ease-in-out;
 }
 
 .profile_dropdown-menu-inactive {
@@ -127,9 +133,184 @@
     font-size: 1rem;
     border-radius: 4px;
     text-decoration: none;
+    padding: 0.5rem 1rem;
 }
 
 .profile_dropdown-menu-active:hover {
     border-bottom: 4px solid #fff;
+
+}
+
+.events_dropdown-menu-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: space-evenly;
+    right: -35px;
+    top: -11px;
+    margin-top: 95px;
+    width: 120px;
+    height: 300px;
+    border-radius: 10px;
+    background: linear-gradient(360deg, rgba(28, 27, 27, 0.986) 0%, rgba(26, 23, 23, 0.745) 5%);
+    transition: all 0.5s ease-in-out;
+}
+
+.events_dropdown-menu-inactive {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 95px;
+    width: 120px;
+    border-radius: 10px;
+    background: linear-gradient(360deg, rgba(28, 27, 27, 0.986) 0%, rgba(26, 23, 23, 0.745) 5%);
+    transition: all 0.5s ease-in;
+}
+
+/* .nav-container1100 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    max-width: 1500px;
+} */
+
+.navBar-mobile-container { 
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%; /* Use percentage for relative width */
+    margin: 0.5% 0.5% auto; /* Use percentage for margin */
+    border-radius: 10px;
+    /* padding: 0.5em; */
+    background: linear-gradient(90deg, rgba(28, 27, 27, 0.986) 0%, rgba(26, 23, 23, 0.745) 50%);
+}
+
+.nav-mobile-events-menu {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 90vh;
+    position: absolute;
+    top: 10vh;
+    left: -100%;
+    opacity: 1;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+
+.nav-mobile-events-menu.active {
+    background: linear-gradient(90deg, rgba(28, 27, 27, 0.986) 0%, rgba(26, 23, 23, 0.745) 50%);
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.nav-mobile-event-item {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 2.8vh 2vw; /* Use vw and vh for padding */
+    font-size: 4vw; /* Use vw for font size */
+    margin-top: 1dvh;
+    margin-left: 0.5dvh;
+    border-radius: 10px;
+    border-bottom: 4px solid #858983;
+}
+  
+.nav-mobile-event-item:hover {
+    color: #000;
+    background-color: #858983;
     transition: all 0.2s ease-out;
+}
+
+.nav-item {
+    height: 10vh;
+}
+
+.navbar-hamburgerMenu {
+    display: flex;
+    justify-self: start;
+    align-items: center;
+    position: absolute;
+    left: 1vw; /* Use vw for left positioning */
+    padding: 1vh;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbar-mobile-profile-menu {
+    display: flex;
+    justify-self: flex-end;
+    align-items: center;
+    position: absolute;
+    right: 1vw; /* Use vw for right positioning */
+    padding: 1vh;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbar-logo-mobile img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensures that the image is treated as a block element */
+    margin: 0 auto; /* Centers the image horizontally within the link */
+}
+
+.navbar-logo-mobile {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.navbar-logo-mobile:hover {
+    background: #858983;;
+    transition: all 0.25s ease-in;
+}
+
+/* Styles for devices with higher pixel density (retina screens) */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .navbar-logo-mobile img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .navbar-logo-mobile {
+        display: flex;
+        justify-self: center;
+        align-items: center;
+        position: absolute;
+        max-width: 100%;
+        height: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+        text-decoration: none;
+        border-radius: 10px;
+        background: transparent;
+    }
+    
+    .navbar-logo-mobile:hover {
+        background: #858983;
+        transition: all 0.25s ease-in;
+    }
 }
