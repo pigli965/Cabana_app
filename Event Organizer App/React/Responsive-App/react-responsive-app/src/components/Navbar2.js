@@ -141,6 +141,20 @@ export const Navbar3 = () => {
         setevents_MenuActive(!events_MenuActive);
     }
 
+    // const showNavBar = () => {
+    //     if (window.devicePixelRatio > 1500) {
+    //       setNavBar2000(true);
+    //     } else {
+    //       setNavBar2000(false);
+    //     }
+    //   };
+    
+    //   useEffect(() => {
+    //     showNavBar();
+    //   }, []);
+    
+    //   window.addEventListener('resize', showNavBar);
+
     return (
         <div className='navBar-mobile-container'>
             <div className='navbar-hamburgerMenu' onClick={Trigger_EventsMenu}>

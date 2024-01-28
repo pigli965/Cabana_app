@@ -25,16 +25,19 @@ function App() {
   const showNavBar = () => {
     if (window.innerWidth > 1500) {
       setNavBar2000(true);
+      console.log("devicePixelRatio:", window.devicePixelRatio);
     } else {
       setNavBar2000(false);
     }
     if (window.innerWidth <= 1500 && window.innerWidth > 1100) {
       setNavBar1500(true);
+      console.log("devicePixelRatio:", window.devicePixelRatio);
     } else {
       setNavBar1500(false);
     }
     if (window.innerWidth <= 1100) {
       setNavBar1100(true);
+      console.log("devicePixelRatio:", window.devicePixelRatio);
     } else {
       setNavBar1100(false);
     }
