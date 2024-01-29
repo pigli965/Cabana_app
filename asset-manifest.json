@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/static/css/main.af0511dd.css",
+    "main.js": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/static/js/main.4e93a59f.js",
+    "static/js/787.d016ec3c.chunk.js": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/static/js/787.d016ec3c.chunk.js",
+    "static/media/img-2.jpg": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/static/media/img-2.bb238fc1bea8ae2474d2.jpg",
+    "static/media/img-1.jpg": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/static/media/img-1.53f4843759ebec256cb9.jpg",
+    "static/media/img-8.jpg": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/static/media/img-8.fabdf94dc5be2d3dc707.jpg",
+    "static/media/white-logo-item.png": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/static/media/white-logo-item.50f006ba944f7cf84e05.png",
+    "static/media/black-logo-item.png": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/static/media/black-logo-item.126ed8f0d7c6c3799cbd.png",
+    "static/media/white-mobile-logo-item.png": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/static/media/white-mobile-logo-item.3c6550cea45dcdcb87a4.png",
+    "index.html": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/index.html",
+    "main.af0511dd.css.map": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/static/css/main.af0511dd.css.map",
+    "main.4e93a59f.js.map": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/static/js/main.4e93a59f.js.map",
+    "787.d016ec3c.chunk.js.map": "/Cabana_app/tree/feature-excel_app/Event%20Organizer%20App/React/Responsive-App/react-responsive-app/static/js/787.d016ec3c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af0511dd.css",
+    "static/js/main.4e93a59f.js"
+  ]
+}
