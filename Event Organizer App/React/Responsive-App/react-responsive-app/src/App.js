@@ -61,25 +61,32 @@ function App() {
         <nav className={navBar1100 ? 'show-navBar1100' : 'hide-navBar1100'}>
           <Navbar3 />
         </nav>
-        <Routes>
-          <Route path='/' exact />
+        
+        <body className='home'>
+          <Routes>
+            {/* Home Page */}
+            <Route path='/' exact />
 
-          {/* Event Pages */}
-          <Route path='/alege-data' element={Date_Page} />
-          <Route path='/participanti' element={Participanti_Page} />
-          <Route path='/finante' element={Finante_Page} />
-          <Route path='/locatie' element={Locatie_Page} />
-          <Route path='/transport' element={Transport_Page} />
-          <Route path='/catering' element={Catering_Page} />
-          <Route path='/activitati' element={Activati_Page} />          
+            {/* Event Pages */}
+            <Route path='/alege-data' element={Date_Page} />
+            <Route path='/participanti' element={Participanti_Page} />
+            <Route path='/finante' element={Finante_Page} />
+            <Route path='/locatie' element={Locatie_Page} />
+            <Route path='/transport' element={Transport_Page} />
+            <Route path='/catering' element={Catering_Page} />
+            <Route path='/activitati' element={Activati_Page} />          
 
-          {/* Account Pages */}
-          <Route path='/profil' element={Profil_Page} />
-          <Route path='/notificari' element={Notificari_Page} />
-          <Route path='/setari' element={Setari_Page} />
-          <Route path='/asistenta' element={Asistenta_Page} />
-          <Route path='/autentificare' element={Autentificare_Page} />
-        </Routes>
+            {/* Account Pages */}
+            <Route path='/profil' element={Profil_Page} />
+            <Route path='/notificari' element={Notificari_Page} />
+            <Route path='/setari' element={Setari_Page} />
+            <Route path='/asistenta' element={Asistenta_Page} />
+            <Route path='/autentificare' element={Autentificare_Page} />
+          </Routes>
+        </body>
+        
+
+        
       </Router>
     </>
   );
