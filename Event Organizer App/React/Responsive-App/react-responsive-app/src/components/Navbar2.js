@@ -129,53 +129,22 @@ export const Navbar2 = () => {
     )
 }
 
-export const Navbar3 = () => {
-
-    const [profile_mobile_DropdownMenuActive, setProfile_mobile_DropdownMenuActive] = useState(false)
-    const [events_MenuActive, setevents_MenuActive] = useState(false)
-
-    
-    const Trigger_EventsMenu = () => {
-        setevents_MenuActive(!events_MenuActive);
-        setProfile_mobile_DropdownMenuActive(false);
-    }
-    const Trigger_Mobile_Profile_DropdownMenu = () => {
-        setProfile_mobile_DropdownMenuActive(!profile_mobile_DropdownMenuActive);
-        setevents_MenuActive(false);
-    }
-
+export const Navbar3 = ({ triggerEventsMenu, triggerMobileProfileDropdownMenu }) => {
     return (
-        <div className='navBar-mobile-container'>
-            <div className='navbar-hamburgerMenu' onClick={Trigger_EventsMenu}>
-                {/* <i className={events_MenuActive ? 'fas fa-times' : 'fas fa-bars'} /> */}
-                <img src={white_hamburgerMenu} alt='white_hamburgerMenu'></img>
-            </div>
+        // <nav className='Page-container'> 
+            <nav className='navBar-mobile-container'>
+                <div className='navbar-hamburgerMenu' onClick={triggerEventsMenu}>
+                    <img src={white_hamburgerMenu} alt='white_hamburgerMenu'></img>
+                </div>
 
-            <ul className={events_MenuActive ? 'nav-mobile-events-menu active' : 'nav-mobile-events-menu'}>               
-                <Link to='/alege-data' className='nav-mobile-event-item' >Alege Data</Link>                 
-                <Link to='/participanti' className='nav-mobile-event-item' >Participanti</Link>        
-                <Link to='/finante' className='nav-mobile-event-item' >Finante</Link>                 
-                <Link to='/locatie' className='nav-mobile-event-item' >Locatie</Link>     
-                <Link to='/transport' className='nav-mobile-event-item' >Transport</Link>                  
-                <Link to='/transport' className='nav-mobile-event-item' >Transport</Link>                  
-                <Link to='/catering' className='nav-mobile-event-item' >Catering</Link>               
-                <Link to='/activitati' className='nav-mobile-event-item' >Activitati</Link>                   
-            </ul>           
+                <Link to='/' className='navbar-logo-mobile'>
+                        <img src={white_mobile_logoImage} alt='white_mobile_logoImage'></img>       
+                </Link>
 
-            <Link to='/' className='navbar-logo-mobile'>
-                    <img src={white_mobile_logoImage} alt='white_mobile_logoImage'></img>       
-            </Link>
-
-            <div to='/profil' className='navbar-mobile-profile-menu' onClick={Trigger_Mobile_Profile_DropdownMenu} >
-                    <img src={white_mobile_profileMenu} alt='white_mobile_profileMenu'></img>
-            </div>               
-            <ul className={profile_mobile_DropdownMenuActive ? 'profile_mobile-dropdown-menu active' : 'profile_mobile-dropdown-menu'}>
-                <Link to='/profil' className='nav-mobile-event-item'>Profil</Link>        
-                <Link to='/notificari' className='nav-mobile-event-item'>Notificari</Link>              
-                <Link to='/setari' className='nav-mobile-event-item'>Setari</Link>               
-                <Link to='/asistenta' className='nav-mobile-event-item'>Asistenta</Link>          
-                <Link to='/autentificare' className='nav-mobile-event-item'>Autentificare</Link>               
-            </ul>
-        </div>
+                <div className='navbar-mobile-profile-menu' onClick={triggerMobileProfileDropdownMenu} >
+                        <img src={white_mobile_profileMenu} alt='white_mobile_profileMenu'></img>
+                </div>               
+            </nav>
+        // </nav>
     )
 }

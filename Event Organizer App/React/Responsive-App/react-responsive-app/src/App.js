@@ -15,12 +15,15 @@ import { Notificari_Page } from './pages/account/Notificari_Page';
 import { Setari_Page } from './pages/account/Setari_Page';
 import Asistenta_Page from './pages/account/Asistenta_Page';
 import { Navbar1, Navbar2, Navbar3 } from './components/Navbar2';
+import { SidebarHamburgerMenu , SidebarProfile  } from './components/Sidebars_Mobile_Menus';
 
 function App() {
 
   const [navBar2000, setNavBar2000] = useState(false);
   const [navBar1500, setNavBar1500] = useState(false);
   const [navBar1100, setNavBar1100] = useState(false);
+  const [events_MenuActive, setEvents_MenuActive] = useState(false);
+  const [profile_mobile_DropdownMenuActive, setProfile_mobile_DropdownMenuActive] = useState(false);
 
   const showNavBar = () => {
     if (window.innerWidth > 1500) {
@@ -37,7 +40,8 @@ function App() {
     }
     if (window.innerWidth <= 1100) {
       setNavBar1100(true);
-      console.log("devicePixelRatio:", window.devicePixelRatio);
+      console.log("innerWidth:", window.innerWidth);
+      console.log("innerHeight:", window.innerHeight);
     } else {
       setNavBar1100(false);
     }
@@ -49,6 +53,16 @@ function App() {
 
   window.addEventListener('resize', showNavBar);
 
+  const triggerEventsMenu = () => {
+    setEvents_MenuActive(!events_MenuActive);
+    setProfile_mobile_DropdownMenuActive(false);
+  };
+
+  const triggerMobileProfileDropdownMenu = () => {
+    setProfile_mobile_DropdownMenuActive(!profile_mobile_DropdownMenuActive);
+    setEvents_MenuActive(false);
+  };
+
   return (
     <>
       <Router>
@@ -59,10 +73,32 @@ function App() {
           <Navbar2 />
         </nav>
         <nav className={navBar1100 ? 'show-navBar1100' : 'hide-navBar1100'}>
-          <Navbar3 />
-        </nav>
-        
+          <Navbar3 
+          triggerEventsMenu={triggerEventsMenu}
+          triggerMobileProfileDropdownMenu={triggerMobileProfileDropdownMenu}
+          />
+        </nav>         
+
         <body className='home'>
+          
+          {/* <div>
+            <SidebarHamburgerMenu events_MenuActive={events_MenuActive} />
+          </div>
+          <div>
+            <SidebarProfile profile_mobile_DropdownMenuActive={profile_mobile_DropdownMenuActive} />
+          </div> */}
+
+          {events_MenuActive && (
+          <div>
+            <SidebarHamburgerMenu events_MenuActive={events_MenuActive} />
+          </div>
+          )}
+          {profile_mobile_DropdownMenuActive && (
+            <div>
+              <SidebarProfile profile_mobile_DropdownMenuActive={profile_mobile_DropdownMenuActive} />
+            </div>
+          )}
+
           <Routes>
             {/* Home Page */}
             <Route path='/' exact />

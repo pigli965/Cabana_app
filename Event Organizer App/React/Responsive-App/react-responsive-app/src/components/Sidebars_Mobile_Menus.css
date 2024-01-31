@@ -1,0 +1,96 @@
+/* .navBar-mobile-container { 
+    display: flex;
+    justify-content: space-between;
+    min-height: 100px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    margin: 0.5% 0.5% auto; 
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(28, 27, 27, 0.986) 0%, rgba(26, 23, 23, 0.745) 50%, rgba(28, 27, 27, 0.986) 100%);
+} */
+
+.nav-mobile-events-menu {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    min-height: 90vh;
+    position: absolute;
+    top: 10vh;
+    left: -100%;
+    opacity: 1;
+    border-radius: 10px 0px 10px 0px;
+    transition: all 0.5s ease;
+}
+
+.profile_mobile-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    min-height: 90vh;
+    position: absolute;
+    top: 10vh;
+    right: -100%;
+    opacity: 1;
+    border-radius: 0px 10px 0px 10px;
+    transition: all 0.5s ease;
+}
+
+.nav-mobile-events-menu.active {
+    background: linear-gradient(90deg, rgba(28, 27, 27, 0.986) 0%, rgba(26, 23, 23, 0.745) 100%);
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.profile_mobile-dropdown-menu.active {
+    background: linear-gradient(90deg, rgba(26, 23, 23, 0.745) 0%, rgba(28, 27, 27, 0.986) 70%);
+    right: 0%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+
+.nav-mobile-event-item {
+    display: flex;
+    color: #fff;
+    align-items: center;
+    text-decoration: none;
+    padding: 1dvh 3dvw;
+    font-size: 4dvw;
+    margin-top: 1dvh;
+    margin-left: 0.5dvh;
+    border-radius: 10px;
+    border-bottom: 4px solid #858983;
+}
+
+@media only screen and (max-width: 1100px) and (max-height: 1400px) {
+    .nav-mobile-event-item {
+        font-size: 2.5dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+}
+
+@media only screen and (max-width: 1100px) and (max-height: 700px) {
+    .nav-mobile-event-item {
+        font-size: 2.5dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+}
+
+@media only screen and (max-width: 500px) and (max-height: 1000px) {
+    .nav-mobile-event-item {
+        font-size: 4dvw;
+        padding: 1.5dvh 3dvw;
+    }
+}
+
+@media only screen and (max-width: 500px) and (max-height: 700px) {
+    .nav-mobile-event-item {
+        font-size: 4dvw;
+        padding: 1.5dvh 3dvw;
+    }
+}
