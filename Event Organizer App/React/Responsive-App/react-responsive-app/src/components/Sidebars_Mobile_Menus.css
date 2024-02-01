@@ -1,16 +1,10 @@
-/* .navBar-mobile-container { 
-    display: flex;
-    justify-content: space-between;
-    min-height: 100px;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    width: 100%;
-    margin: 0.5% 0.5% auto; 
-    border-radius: 10px;
-    background: linear-gradient(90deg, rgba(28, 27, 27, 0.986) 0%, rgba(26, 23, 23, 0.745) 50%, rgba(28, 27, 27, 0.986) 100%);
-} */
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #a17cce;
+    --third-color: #6A0DAD;
+    --primary-text-color: #FFF;
+    --secondary-text-color: #000;
+}
 
 .nav-mobile-events-menu {
     display: flex;
@@ -39,7 +33,7 @@
 }
 
 .nav-mobile-events-menu.active {
-    background: linear-gradient(90deg, rgba(28, 27, 27, 0.986) 0%, rgba(26, 23, 23, 0.745) 100%);
+    background: var(--secondary-color);
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
@@ -47,50 +41,200 @@
 }
 
 .profile_mobile-dropdown-menu.active {
-    background: linear-gradient(90deg, rgba(26, 23, 23, 0.745) 0%, rgba(28, 27, 27, 0.986) 70%);
+    background: var(--secondary-color);
     right: 0%;
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
 }
 
+.flow > :where(:first-child) {
+    margin-top: 20px;
+}
+
+.flow > :where(:first-child):hover {
+    margin-top: 20px;
+}
+
 .nav-mobile-event-item {
     display: flex;
-    color: #fff;
+    position: relative;
+    color: var(--primary-text-color);
     align-items: center;
     text-decoration: none;
     padding: 1dvh 3dvw;
     font-size: 4dvw;
-    margin-top: 1dvh;
-    margin-left: 0.5dvh;
-    border-radius: 10px;
-    border-bottom: 4px solid #858983;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom: 4px solid var(--third-color);
+}
+.nav-mobile-profile-item {
+    display: flex;
+    position: relative;
+    color: var(--primary-text-color);
+    align-items: center;
+    text-decoration: none;
+    padding: 1dvh 3dvw;
+    font-size: 4dvw;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 4px solid var(--third-color);
 }
 
+.nav-mobile-event-item:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}    
+
+.nav-mobile-profile-item:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}    
+
+.nav-mobile-event-item:hover .left-indicator::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-bottom-right-radius: 10px;
+    box-shadow: 10px 10px 0 10px var(--primary-color);
+}
+
+.nav-mobile-event-item:hover .left-indicator::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 10px;
+    box-shadow: 10px -10px 0 10px var(--primary-color);
+}
+
+.nav-mobile-profile-item:hover .right-indicator::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-bottom-left-radius: 10px;
+    box-shadow: -10px 10px 0 10px var(--primary-color);
+}
+
+.nav-mobile-profile-item:hover .right-indicator::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 10px;
+    box-shadow: -10px -10px 0 10px var(--primary-color);
+}
+
+/* New Small Tablets - Portrait Mode  */
 @media only screen and (max-width: 1100px) and (max-height: 1400px) {
     .nav-mobile-event-item {
         font-size: 2.5dvw;
         padding: 1.5dvh 3.5dvw;
     }
-}
-
-@media only screen and (max-width: 1100px) and (max-height: 700px) {
-    .nav-mobile-event-item {
+    .nav-mobile-profile-item {
         font-size: 2.5dvw;
         padding: 1.5dvh 3.5dvw;
     }
 }
 
+/* New Small Tablets - Square Tablet  */
+@media only screen and (max-width: 1100px) and (max-height: 1100px) {
+    .nav-mobile-event-item {
+        font-size: 2.5dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 2.5dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+}
+
+/* Old Small Tablets - Portrait Mode  */
+@media only screen and (max-width: 1100px) and (max-height: 700px) {
+    .nav-mobile-event-item {
+        font-size: 2.5dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 2.5dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+}
+
+/* Old Small Tablets - Landscape Mode  */
+@media only screen and (max-width: 700px) and (max-height: 1100px) {
+    .nav-mobile-event-item {
+        font-size: 4dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 4dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+}
+
+/* New Mobile Phones - Portrait Mode  */
 @media only screen and (max-width: 500px) and (max-height: 1000px) {
     .nav-mobile-event-item {
         font-size: 4dvw;
         padding: 1.5dvh 3dvw;
     }
+    .nav-mobile-profile-item {
+        font-size: 4dvw;
+        padding: 1.5dvh 3dvw;
+    }
 }
 
+/* New Mobile Phones - Landscape Mode */
+@media only screen and (max-width: 1000px) and (max-height: 500px) {
+    .nav-mobile-event-item {
+        font-size: 1.8dvw;
+        padding: 1.5dvh 4dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 1.8dvw;
+        padding: 1.5dvh 4dvw;
+    }
+}
+
+/* Old Mobile Phones - Portrait Mode  */
 @media only screen and (max-width: 500px) and (max-height: 700px) {
     .nav-mobile-event-item {
         font-size: 4dvw;
         padding: 1.5dvh 3dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 4dvw;
+        padding: 1.5dvh 3dvw;
+    }
+}
+
+/* Old Mobile Phones - Landscape Mode  */
+@media only screen and (max-width: 700px) and (max-height: 500px) {
+    .nav-mobile-event-item {
+        font-size: 2dvw;
+        padding: 1.5dvh 4dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 2dvw;
+        padding: 1.5dvh 4dvw;
     }
 }

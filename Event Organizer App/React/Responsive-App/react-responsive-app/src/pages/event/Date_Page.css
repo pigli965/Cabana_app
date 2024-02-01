@@ -1,0 +1,36 @@
+:root {
+    --first-bg: #A6D785;
+    --second-bg: #87AE73;
+    --third-bg: #98FB98;
+    --fourth-bg: #50C878;
+    --fifth-bg: #556B2F;
+    --sixth-bg: #228B22;
+  }
+
+
+.element {
+    display: flex;
+    max-height: 5dvh;
+    max-width: 5dvw;
+    position: relative;
+    font-size: 2dvw;
+}
+
+.element.first {
+    background: var(--first-bg);
+}
+.element.second {
+    background: var(--second-bg);
+}
+.element.third {
+    background: var(--third-bg);
+}
+.element.fourth {
+    background: var(--fourth-bg);
+}
+.element.fifth {
+    background: var(--fifth-bg);
+}
+.element.sixth {
+    background: var(--sixth-bg);
+}

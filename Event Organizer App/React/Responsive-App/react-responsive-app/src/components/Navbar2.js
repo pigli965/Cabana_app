@@ -53,7 +53,7 @@ export const Navbar1 = () => {
                 )}
             </Link>
                 
-            <ul className={profile_DropdownMenuActive ? 'profile_dropdown-menu-active' : 'profile_dropdown-menu-inactive'}>
+            <ul className={profile_DropdownMenuActive ? 'flow profile_dropdown-menu active' : 'flow profile_dropdown-menu'}>
                 <Link to='/profil' className='nav-profile-dropdown-item'>Profil</Link>
                 <Link to='/notificari' className='nav-profile-dropdown-item'>Notificari</Link>
                 <Link to='/setari' className='nav-profile-dropdown-item'>Setari</Link>
@@ -118,7 +118,7 @@ export const Navbar2 = () => {
                 )}
             </Link>
                 
-            <ul className={profile_DropdownMenuActive ? 'profile_dropdown-menu-active' : 'profile_dropdown-menu-inactive'}>
+            <ul className={profile_DropdownMenuActive ? 'flow profile_dropdown-menu active' : 'flow profile_dropdown-menu'}>
                 <Link to='/profil' className='nav-profile-dropdown-item'>Profil</Link>
                 <Link to='/notificari' className='nav-profile-dropdown-item'>Notificari</Link>
                 <Link to='/setari' className='nav-profile-dropdown-item'>Setari</Link>
@@ -131,20 +131,18 @@ export const Navbar2 = () => {
 
 export const Navbar3 = ({ triggerEventsMenu, triggerMobileProfileDropdownMenu }) => {
     return (
-        // <nav className='Page-container'> 
-            <nav className='navBar-mobile-container'>
-                <div className='navbar-hamburgerMenu' onClick={triggerEventsMenu}>
-                    <img src={white_hamburgerMenu} alt='white_hamburgerMenu'></img>
-                </div>
+        <nav className='navBar-mobile-container'>
+            <div className='navbar-hamburgerMenu' onClick={triggerEventsMenu}>
+                <img src={white_hamburgerMenu} alt='white_hamburgerMenu'></img>
+            </div>
 
-                <Link to='/' className='navbar-logo-mobile'>
-                        <img src={white_mobile_logoImage} alt='white_mobile_logoImage'></img>       
-                </Link>
+            <Link to='/' className='navbar-logo-mobile'>
+                    <img src={white_mobile_logoImage} alt='white_mobile_logoImage'></img>       
+            </Link>
 
-                <div className='navbar-mobile-profile-menu' onClick={triggerMobileProfileDropdownMenu} >
-                        <img src={white_mobile_profileMenu} alt='white_mobile_profileMenu'></img>
-                </div>               
-            </nav>
-        // </nav>
+            <div className='navbar-mobile-profile-menu' onClick={triggerMobileProfileDropdownMenu} >
+                    <img src={white_mobile_profileMenu} alt='white_mobile_profileMenu'></img>
+            </div>               
+        </nav>
     )
 }

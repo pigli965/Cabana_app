@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //import Navbar from './components/Navbar';
 import { Finante_Page } from './pages/event/Finante_Page';
-import { Date_Page } from './pages/event/Date_Page';
+import { DatePage } from './pages/event/Date_Page';
 import { Participanti_Page } from './pages/event/Participanti_Page';
 import { Autentificare_Page } from './pages/account/Autentificare_Page';
 import { Locatie_Page } from './pages/event/Locatie_Page';
@@ -64,7 +64,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className='app-container'>
       <Router>
         <nav className={navBar2000 ? 'show-navBar2000' : 'hide-navBar2000'}>
           <Navbar1 />
@@ -79,14 +79,7 @@ function App() {
           />
         </nav>         
 
-        <body className='home'>
-          
-          {/* <div>
-            <SidebarHamburgerMenu events_MenuActive={events_MenuActive} />
-          </div>
-          <div>
-            <SidebarProfile profile_mobile_DropdownMenuActive={profile_mobile_DropdownMenuActive} />
-          </div> */}
+        <div className='home'>
 
           {events_MenuActive && (
           <div>
@@ -104,27 +97,27 @@ function App() {
             <Route path='/' exact />
 
             {/* Event Pages */}
-            <Route path='/alege-data' element={Date_Page} />
-            <Route path='/participanti' element={Participanti_Page} />
-            <Route path='/finante' element={Finante_Page} />
-            <Route path='/locatie' element={Locatie_Page} />
-            <Route path='/transport' element={Transport_Page} />
-            <Route path='/catering' element={Catering_Page} />
-            <Route path='/activitati' element={Activati_Page} />          
+            <Route path='/alege-data' element={<DatePage />} />
+            <Route path='/participanti' element={<Participanti_Page/>} />
+            <Route path='/finante' element={<Finante_Page/>} />
+            <Route path='/locatie' element={<Locatie_Page/>} />
+            <Route path='/transport' element={<Transport_Page/>} />
+            <Route path='/catering' element={<Catering_Page/>} />
+            <Route path='/activitati' element={<Activati_Page/>} />          
 
             {/* Account Pages */}
-            <Route path='/profil' element={Profil_Page} />
-            <Route path='/notificari' element={Notificari_Page} />
-            <Route path='/setari' element={Setari_Page} />
-            <Route path='/asistenta' element={Asistenta_Page} />
-            <Route path='/autentificare' element={Autentificare_Page} />
+            <Route path='/profil' element={<Profil_Page/>} />
+            <Route path='/notificari' element={<Notificari_Page/>} />
+            <Route path='/setari' element={<Setari_Page/>} />
+            <Route path='/asistenta' element={<Asistenta_Page/>} />
+            <Route path='/autentificare' element={<Autentificare_Page/>} />
           </Routes>
-        </body>
+        </div>
         
 
         
       </Router>
-    </>
+    </div>
   );
 }
 
