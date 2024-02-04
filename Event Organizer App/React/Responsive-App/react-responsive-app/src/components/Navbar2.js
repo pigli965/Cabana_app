@@ -9,16 +9,16 @@ import white_mobile_profileMenu from './logoImages/white-mobile-profile-menu.png
 import white_mobile_logoImage from './logoImages/white-mobile-logo-item.png';
 import './Navbar2.css';
 
-export const Navbar1 = () => {
+export const Navbar1 = ({triggerDropdownMenu, profile_DropdownMenuActive}) => {
 
     const [isLogoHover, setIsLogoHover] = useState(false);
     const [isProfileMenuHover, setIsProfileMenuHover] = useState(false);
 
-    const [profile_DropdownMenuActive, setProfile_DropdownMenuActive] = useState(false)
+    // const [profile_DropdownMenuActive, setProfile_DropdownMenuActive] = useState(false)
 
-    const Trigger_DropdownMenu = () => {
-        setProfile_DropdownMenuActive(!profile_DropdownMenuActive);
-    }
+    // const triggerDropdownMenu = () => {
+    //     setProfile_DropdownMenuActive(!profile_DropdownMenuActive);
+    // }
     
     return (
         <div className='navBar-container'>
@@ -41,8 +41,8 @@ export const Navbar1 = () => {
                 <Link to='/catering' className='nav-event-item' >Catering</Link>
                 <Link to='/activitati' className='nav-event-item' >Activitati</Link>
             </ul>
-            <Link to='/profil' className='navbar-profile-menu' 
-                onClick={Trigger_DropdownMenu} 
+            <div className='navbar-profile-menu' 
+                onClick={triggerDropdownMenu} 
                 onMouseEnter={() => setIsProfileMenuHover(true)}
                 onMouseLeave={() => setIsProfileMenuHover(false)}
             >
@@ -51,7 +51,7 @@ export const Navbar1 = () => {
                 ) : (
                     <img src={white_profileMenu} alt='white_profileMenu'></img>
                 )}
-            </Link>
+            </div>
                 
             <ul className={profile_DropdownMenuActive ? 'flow profile_dropdown-menu active' : 'flow profile_dropdown-menu'}>
                 <Link to='/profil' className='nav-profile-dropdown-item'>Profil</Link>
@@ -64,20 +64,14 @@ export const Navbar1 = () => {
     )
 }
 
-export const Navbar2 = () => {
-
+export const Navbar2 = ({
+    triggerMediumResolution_DropdownMenu,
+    triggerMediumResolution_EventDropdownMenu,
+    profile_MediumResolutionDropdownMenuActive,
+    events_MediumResolutionDropdownMenuActive,
+}) => {
     const [isLogoHover, setIsLogoHover] = useState(false);
     const [isProfileMenuHover, setIsProfileMenuHover] = useState(false);
-
-    const [profile_DropdownMenuActive, setProfile_DropdownMenuActive] = useState(false)
-    const [events_DropdownMenuActive, setevents_DropdownMenuActive] = useState(false)
-
-    const Trigger_DropdownMenu = () => {
-        setProfile_DropdownMenuActive(!profile_DropdownMenuActive);
-    }
-    const Trigger_EventDropdownMenu = () => {
-        setevents_DropdownMenuActive(!events_DropdownMenuActive);
-    }
 
     return (
         <header className='navBar-container'>
@@ -95,30 +89,32 @@ export const Navbar2 = () => {
                 <Link to='/alege-data' className='nav-event-item' >Alege Data</Link>
                 <Link to='/participanti' className='nav-event-item' >Participanti</Link>
                 <Link to='/finante' className='nav-event-item' >Finante</Link>
-                <div className='nav-event-item' onClick={Trigger_EventDropdownMenu}>
+                <div className='nav-event-menu-item' onClick={triggerMediumResolution_EventDropdownMenu}>
                     . . .
-                    <ul className={events_DropdownMenuActive ? 'events_dropdown-menu-active' : 'events_dropdown-menu-inactive'}>
+                    <ul className={events_MediumResolutionDropdownMenuActive ? 'flow events_dropdown-menu active' : 'flow events_dropdown-menu'}>
                         <Link to='/locatie' className='nav-profile-dropdown-item' >Locatie</Link>
                         <Link to='/transport' className='nav-profile-dropdown-item' >Transport</Link>
                         <Link to='/catering' className='nav-profile-dropdown-item' >Catering</Link>
                         <Link to='/activitati' className='nav-profile-dropdown-item' >Activitati</Link>
                     </ul>
                 </div>
-            </ul>           
-
-            <Link to='/profil' className='navbar-profile-menu' 
-                onClick={Trigger_DropdownMenu} 
+                  
+            </ul>
+                     
+            <div className='navbar-profile-menu' 
+                onClick={triggerMediumResolution_DropdownMenu} 
                 onMouseEnter={() => setIsProfileMenuHover(true)}
                 onMouseLeave={() => setIsProfileMenuHover(false)}
+
             >
                 {isProfileMenuHover ? (
                     <img src={hover_white_profileMenu} alt='hover_white_profileMenu'></img>
                 ) : (
                     <img src={white_profileMenu} alt='white_profileMenu'></img>
                 )}
-            </Link>
+            </div>
                 
-            <ul className={profile_DropdownMenuActive ? 'flow profile_dropdown-menu active' : 'flow profile_dropdown-menu'}>
+            <ul className={profile_MediumResolutionDropdownMenuActive ? 'flow profile_dropdown-menu active' : 'flow profile_dropdown-menu'}>
                 <Link to='/profil' className='nav-profile-dropdown-item'>Profil</Link>
                 <Link to='/notificari' className='nav-profile-dropdown-item'>Notificari</Link>
                 <Link to='/setari' className='nav-profile-dropdown-item'>Setari</Link>
@@ -129,10 +125,10 @@ export const Navbar2 = () => {
     )
 }
 
-export const Navbar3 = ({ triggerEventsMenu, triggerMobileProfileDropdownMenu }) => {
+export const Navbar3 = ({ triggerMobileEventsMenu, triggerMobileProfileDropdownMenu }) => {
     return (
         <nav className='navBar-mobile-container'>
-            <div className='navbar-hamburgerMenu' onClick={triggerEventsMenu}>
+            <div className='navbar-hamburgerMenu' onClick={triggerMobileEventsMenu}>
                 <img src={white_hamburgerMenu} alt='white_hamburgerMenu'></img>
             </div>
 

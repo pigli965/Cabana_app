@@ -1,0 +1,69 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #a17cce;
+    --third-color: #6A0DAD;
+    --primary-text-color: #FFF;
+    --secondary-text-color: #000;
+    --navbar-height: 10dvh;
+    --footer-height: 3dvh;
+    --margins-top-bottom: 3dvh;
+    --margins-left-right: 0.5dvw;
+}
+
+.card-container {
+    display: flex;
+    position: relative;  
+    width: 99vw;  
+    height: calc(100dvh - var(--navbar-height) - var(--footer-height) - (var(--margins-top-bottom) * 2));
+    justify-content: flex-start; /* Add this line to space the child elements */
+    top: var(--margins-top-bottom);
+    /* left: 0; */
+    margin-left: var(--margins-left-right);
+    margin-right: var(--margins-left-right);
+    gap: 5dvw;
+    align-items: center;
+}
+
+.overview-card {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    width: 25dvw;
+    /* min-height: calc(100dvh - var(--navbar-height) - var(--footer-height) - (var(--margins-top-bottom)*2)); */
+    height: 100%;
+    padding: 20px;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    background: var(--secondary-color);
+}
+
+.overview-card .overview-card-title {
+    margin: 0;
+    color: var(--primary-text-color);
+}
+
+.overview-card .overview-card-date {
+    text-align: start;
+    margin: 0;
+    color: var(--primary-text-color);
+}
+
+.tutorial-card {
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+    width: 62dvw;
+    /* min-height: calc(100dvh - var(--navbar-height) - var(--footer-height) - (var(--margins-top-bottom)*2)); */
+    height: 100%;
+    padding: 20px;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    background: var(--secondary-color);
+}
+
+.tutorial-card .tutorial-card-title {
+    margin: 0;
+    color: var(--primary-text-color);
+}

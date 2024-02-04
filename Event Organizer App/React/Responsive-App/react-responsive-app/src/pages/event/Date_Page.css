@@ -1,36 +1,93 @@
 :root {
-    --first-bg: #A6D785;
-    --second-bg: #87AE73;
-    --third-bg: #98FB98;
-    --fourth-bg: #50C878;
-    --fifth-bg: #556B2F;
-    --sixth-bg: #228B22;
-  }
+    --primary-color: #FFFFFF;
+    --secondary-color: #a17cce;
+    --third-color: #6A0DAD;
+    --primary-text-color: #FFF;
+    --secondary-text-color: #000;
+    --navbar-height: 10dvh;
+    --footer-height: 3dvh;
+    --margins-top-bottom: 5dvh;
+}
 
-
-.element {
+/* Add a class for the wrapper div */
+.date-page-wrapper {
     display: flex;
-    max-height: 5dvh;
-    max-width: 5dvw;
-    position: relative;
-    font-size: 2dvw;
+    position: absolute;
+    left: 5vw;
+    top: 15vh;
+    width: 90vw;
+    height: calc(100dvh - var(--navbar-height) - var(--footer-height) - var(--margins-top-bottom));
+    overflow: auto;
+    justify-content: space-between; /* Add this line to space the child elements */
 }
 
-.element.first {
-    background: var(--first-bg);
+/* Style for the container */
+.container {
+    display: flex;
+    position: relative;
+    top: 15dvh;
+    justify-content: space-between;
+    margin: 20px;
 }
-.element.second {
-    background: var(--second-bg);
+
+.Add-button {
+    width: 20vw;
+    height: 5vh;
 }
-.element.third {
-    background: var(--third-bg);
+
+.Max-Participants {
+    margin-top: 3vh;
 }
-.element.fourth {
-    background: var(--fourth-bg);
+
+/* Style for the input container */
+.input-container {
+    flex: 1; /* Make the input container take the available space */
+    margin-right: 20px;
+    font-size: 1.1vw;
 }
-.element.fifth {
-    background: var(--fifth-bg);
+
+/* Style for input labels */
+label {
+    display: block;
+    margin-bottom: 8px;
 }
-.element.sixth {
-    background: var(--sixth-bg);
+
+/* Style for input fields */
+input {
+    margin-bottom: 12px;
+    padding: 8px;
+    font-size: 1.1vw;
+}
+
+/* Style for the table container */
+.table-container {
+    display: flex;
+    flex: 1; /* Make the table container take the available space */
+    top: 15vh;
+}
+
+/* Style for the table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Style for table headers */
+th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    background-color: #f2f2f2;
+    font-size: 1.3vw;
+}
+
+/* Style for table rows */
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+/* Alternate background color for odd rows */
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
 }

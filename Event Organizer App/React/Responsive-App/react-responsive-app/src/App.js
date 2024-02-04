@@ -16,32 +16,42 @@ import { Setari_Page } from './pages/account/Setari_Page';
 import Asistenta_Page from './pages/account/Asistenta_Page';
 import { Navbar1, Navbar2, Navbar3 } from './components/Navbar2';
 import { SidebarHamburgerMenu , SidebarProfile  } from './components/Sidebars_Mobile_Menus';
+import { HomePage } from './pages/event/HomePage';
+import { Footer } from './components/Footer';
 
 function App() {
 
   const [navBar2000, setNavBar2000] = useState(false);
   const [navBar1500, setNavBar1500] = useState(false);
   const [navBar1100, setNavBar1100] = useState(false);
-  const [events_MenuActive, setEvents_MenuActive] = useState(false);
+
+  const [profile_DropdownMenuActive, setProfile_DropdownMenuActive] = useState(false)
+
+  const [events_mobile_MenuActive, setEvents_mobile_MenuActive] = useState(false);
   const [profile_mobile_DropdownMenuActive, setProfile_mobile_DropdownMenuActive] = useState(false);
+
+  const [profile_MediumResolutionDropdownMenuActive, setProfile_MediumResolutionDropdownMenuActive] = useState(false);
+  const [events_MediumResolutionDropdownMenuActive, setEvents_MediumResolutionDropdownMenuActive] = useState(false);
 
   const showNavBar = () => {
     if (window.innerWidth > 1500) {
       setNavBar2000(true);
-      console.log("devicePixelRatio:", window.devicePixelRatio);
+      closeMobileMenus();
+      closeMediumResolutioneMenus();
     } else {
       setNavBar2000(false);
     }
     if (window.innerWidth <= 1500 && window.innerWidth > 1100) {
       setNavBar1500(true);
-      console.log("devicePixelRatio:", window.devicePixelRatio);
+      closeMaximumResolutioneMenus();
+      closeMobileMenus();
     } else {
       setNavBar1500(false);
     }
     if (window.innerWidth <= 1100) {
       setNavBar1100(true);
-      console.log("innerWidth:", window.innerWidth);
-      console.log("innerHeight:", window.innerHeight);
+      closeMaximumResolutioneMenus();
+      closeMediumResolutioneMenus();
     } else {
       setNavBar1100(false);
     }
@@ -52,38 +62,78 @@ function App() {
   }, []);
 
   window.addEventListener('resize', showNavBar);
-
-  const triggerEventsMenu = () => {
-    setEvents_MenuActive(!events_MenuActive);
+//#region Maximum Resolution Profile Dropdown Menu 
+  const triggerDropdownMenu = () => {
+      setProfile_DropdownMenuActive(!profile_DropdownMenuActive);
+  }
+//#endregion
+//#region Medium Resolution Profile Dropdown Menu & Event Dropdown Menu
+  const triggerMediumResolution_DropdownMenu = () => {
+    setProfile_MediumResolutionDropdownMenuActive(!profile_MediumResolutionDropdownMenuActive);
+    setEvents_MediumResolutionDropdownMenuActive(false);
+  }
+  const triggerMediumResolution_EventDropdownMenu = () => {
+    setEvents_MediumResolutionDropdownMenuActive(!events_MediumResolutionDropdownMenuActive);
+    setProfile_MediumResolutionDropdownMenuActive(false);
+  }
+//#endregion
+//#region Mobile Resolution Profile Dropdown Menu & Event Dropdown Menu
+  const triggerMobileEventsMenu = () => {
+    setEvents_mobile_MenuActive(!events_mobile_MenuActive);
     setProfile_mobile_DropdownMenuActive(false);
   };
 
   const triggerMobileProfileDropdownMenu = () => {
     setProfile_mobile_DropdownMenuActive(!profile_mobile_DropdownMenuActive);
-    setEvents_MenuActive(false);
+    setEvents_mobile_MenuActive(false);
   };
+//#endregion
+ 
+
+
+  const closeMaximumResolutioneMenus = () => {
+    setProfile_DropdownMenuActive(false);
+  }
+
+  const closeMediumResolutioneMenus = () => {
+    setEvents_MediumResolutionDropdownMenuActive(false);
+    setProfile_MediumResolutionDropdownMenuActive(false);
+  }
+
+  const closeMobileMenus = () => {
+    setEvents_mobile_MenuActive(false);
+    setProfile_mobile_DropdownMenuActive(false);
+  }
 
   return (
     <div className='app-container'>
       <Router>
         <nav className={navBar2000 ? 'show-navBar2000' : 'hide-navBar2000'}>
-          <Navbar1 />
+          <Navbar1 
+          triggerDropdownMenu={triggerDropdownMenu}
+          profile_DropdownMenuActive={profile_DropdownMenuActive}
+          />
         </nav>
         <nav className={navBar1500 ? 'show-navBar1500' : 'hide-navBar1500'}>
-          <Navbar2 />
+          <Navbar2
+            triggerMediumResolution_DropdownMenu={triggerMediumResolution_DropdownMenu}
+            triggerMediumResolution_EventDropdownMenu={triggerMediumResolution_EventDropdownMenu}
+            profile_MediumResolutionDropdownMenuActive={profile_MediumResolutionDropdownMenuActive}
+            events_MediumResolutionDropdownMenuActive={events_MediumResolutionDropdownMenuActive}
+          />     
         </nav>
         <nav className={navBar1100 ? 'show-navBar1100' : 'hide-navBar1100'}>
           <Navbar3 
-          triggerEventsMenu={triggerEventsMenu}
+          triggerMobileEventsMenu={triggerMobileEventsMenu}
           triggerMobileProfileDropdownMenu={triggerMobileProfileDropdownMenu}
           />
         </nav>         
 
         <div className='home'>
 
-          {events_MenuActive && (
+          {events_mobile_MenuActive && (
           <div>
-            <SidebarHamburgerMenu events_MenuActive={events_MenuActive} />
+            <SidebarHamburgerMenu events_mobile_MenuActive={events_mobile_MenuActive} />
           </div>
           )}
           {profile_mobile_DropdownMenuActive && (
@@ -94,7 +144,7 @@ function App() {
 
           <Routes>
             {/* Home Page */}
-            <Route path='/' exact />
+            <Route path='/' exact element={<HomePage />}/>
 
             {/* Event Pages */}
             <Route path='/alege-data' element={<DatePage />} />
@@ -114,7 +164,7 @@ function App() {
           </Routes>
         </div>
         
-
+        <Footer />
         
       </Router>
     </div>

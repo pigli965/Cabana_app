@@ -1,0 +1,12 @@
+.footer-item{
+    /* display: flex; */
+    position: absolute;
+    height: 3dvh;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: #bfbfbf;
+    text-decoration-color: #fff;
+    text-align: center;
+    z-index: 3;
+  }

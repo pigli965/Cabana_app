@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Sidebars_Mobile_Menus.css';
 
-export const SidebarHamburgerMenu = ({events_MenuActive}) => {
-  console.log("events_MenuActive: ", events_MenuActive)
+export const SidebarHamburgerMenu = ({events_mobile_MenuActive}) => {
+  console.log("events_MenuActive: ", events_mobile_MenuActive)
   return (
       <div>
-          <ul className={events_MenuActive ? 'flow nav-mobile-events-menu active' : 'flow nav-mobile-events-menu'}>               
+          <ul className={events_mobile_MenuActive ? 'flow nav-mobile-events-menu active' : 'flow nav-mobile-events-menu'}>               
                 <Link to='/alege-data' className='nav-mobile-event-item' >
                   Alege Data
                   <div className='left-indicator'></div> 
