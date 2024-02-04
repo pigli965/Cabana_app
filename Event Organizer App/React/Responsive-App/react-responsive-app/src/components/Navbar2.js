@@ -22,7 +22,7 @@ export const Navbar1 = ({triggerDropdownMenu, profile_DropdownMenuActive}) => {
     
     return (
         <div className='navBar-container'>
-            <Link to='/' className='navbar-logo' 
+            <Link to='/AppTest/home' className='navbar-logo' 
                 onMouseEnter={() => setIsLogoHover(true)}
                 onMouseLeave={() => setIsLogoHover(false)} 
             >
@@ -33,13 +33,13 @@ export const Navbar1 = ({triggerDropdownMenu, profile_DropdownMenuActive}) => {
                 )}              
             </Link>
             <ul className='navbar-eventList'>
-                <Link to='/alege-data' className='nav-event-item' >Alege Data</Link>
-                <Link to='/participanti' className='nav-event-item' >Participanti</Link>
-                <Link to='/finante' className='nav-event-item' >Finante</Link>
-                <Link to='/locatie' className='nav-event-item' >Locatie</Link>
-                <Link to='/transport' className='nav-event-item' >Transport</Link>
-                <Link to='/catering' className='nav-event-item' >Catering</Link>
-                <Link to='/activitati' className='nav-event-item' >Activitati</Link>
+                <Link to='/AppTest/alege-data' className='nav-event-item' >Alege Data</Link>
+                <Link to='/AppTest/participanti' className='nav-event-item' >Participanti</Link>
+                <Link to='/AppTest/finante' className='nav-event-item' >Finante</Link>
+                <Link to='/AppTest/locatie' className='nav-event-item' >Locatie</Link>
+                <Link to='/AppTest/transport' className='nav-event-item' >Transport</Link>
+                <Link to='/AppTest/catering' className='nav-event-item' >Catering</Link>
+                <Link to='/AppTest/activitati' className='nav-event-item' >Activitati</Link>
             </ul>
             <div className='navbar-profile-menu' 
                 onClick={triggerDropdownMenu} 
@@ -54,11 +54,11 @@ export const Navbar1 = ({triggerDropdownMenu, profile_DropdownMenuActive}) => {
             </div>
                 
             <ul className={profile_DropdownMenuActive ? 'flow profile_dropdown-menu active' : 'flow profile_dropdown-menu'}>
-                <Link to='/profil' className='nav-profile-dropdown-item'>Profil</Link>
-                <Link to='/notificari' className='nav-profile-dropdown-item'>Notificari</Link>
-                <Link to='/setari' className='nav-profile-dropdown-item'>Setari</Link>
-                <Link to='/asistenta' className='nav-profile-dropdown-item'>Asistenta</Link>
-                <Link to='/autentificare' className='nav-profile-dropdown-item'>Autentificare</Link>
+                <Link to='/AppTest/profil' className='nav-profile-dropdown-item'>Profil</Link>
+                <Link to='/AppTest/notificari' className='nav-profile-dropdown-item'>Notificari</Link>
+                <Link to='/AppTest/setari' className='nav-profile-dropdown-item'>Setari</Link>
+                <Link to='/AppTest/asistenta' className='nav-profile-dropdown-item'>Asistenta</Link>
+                <Link to='/AppTest/autentificare' className='nav-profile-dropdown-item'>Autentificare</Link>
             </ul>
         </div>        
     )
@@ -75,7 +75,7 @@ export const Navbar2 = ({
 
     return (
         <header className='navBar-container'>
-            <Link to='/' className='navbar-logo' 
+            <Link to='/AppTest/home' className='navbar-logo' 
                 onMouseEnter={() => setIsLogoHover(true)}
                 onMouseLeave={() => setIsLogoHover(false)} 
             >
@@ -86,16 +86,16 @@ export const Navbar2 = ({
                 )}              
             </Link>
             <ul className='navbar-eventList'>
-                <Link to='/alege-data' className='nav-event-item' >Alege Data</Link>
-                <Link to='/participanti' className='nav-event-item' >Participanti</Link>
-                <Link to='/finante' className='nav-event-item' >Finante</Link>
+                <Link to='/AppTest/alege-data' className='nav-event-item' >Alege Data</Link>
+                <Link to='/AppTest/participanti' className='nav-event-item' >Participanti</Link>
+                <Link to='/AppTest/finante' className='nav-event-item' >Finante</Link>
                 <div className='nav-event-menu-item' onClick={triggerMediumResolution_EventDropdownMenu}>
                     . . .
                     <ul className={events_MediumResolutionDropdownMenuActive ? 'flow events_dropdown-menu active' : 'flow events_dropdown-menu'}>
-                        <Link to='/locatie' className='nav-profile-dropdown-item' >Locatie</Link>
-                        <Link to='/transport' className='nav-profile-dropdown-item' >Transport</Link>
-                        <Link to='/catering' className='nav-profile-dropdown-item' >Catering</Link>
-                        <Link to='/activitati' className='nav-profile-dropdown-item' >Activitati</Link>
+                        <Link to='/AppTest/locatie' className='nav-profile-dropdown-item' >Locatie</Link>
+                        <Link to='/AppTest/transport' className='nav-profile-dropdown-item' >Transport</Link>
+                        <Link to='/AppTest/catering' className='nav-profile-dropdown-item' >Catering</Link>
+                        <Link to='/AppTest/activitati' className='nav-profile-dropdown-item' >Activitati</Link>
                     </ul>
                 </div>
                   
@@ -115,11 +115,11 @@ export const Navbar2 = ({
             </div>
                 
             <ul className={profile_MediumResolutionDropdownMenuActive ? 'flow profile_dropdown-menu active' : 'flow profile_dropdown-menu'}>
-                <Link to='/profil' className='nav-profile-dropdown-item'>Profil</Link>
-                <Link to='/notificari' className='nav-profile-dropdown-item'>Notificari</Link>
-                <Link to='/setari' className='nav-profile-dropdown-item'>Setari</Link>
-                <Link to='/asistenta' className='nav-profile-dropdown-item'>Asistenta</Link>
-                <Link to='/autentificare' className='nav-profile-dropdown-item'>Autentificare</Link>
+                <Link to='/AppTest/profil' className='nav-profile-dropdown-item'>Profil</Link>
+                <Link to='/AppTest/notificari' className='nav-profile-dropdown-item'>Notificari</Link>
+                <Link to='/AppTest/setari' className='nav-profile-dropdown-item'>Setari</Link>
+                <Link to='/AppTest/asistenta' className='nav-profile-dropdown-item'>Asistenta</Link>
+                <Link to='/AppTest/autentificare' className='nav-profile-dropdown-item'>Autentificare</Link>
             </ul>
         </header> 
     )
@@ -132,7 +132,7 @@ export const Navbar3 = ({ triggerMobileEventsMenu, triggerMobileProfileDropdownM
                 <img src={white_hamburgerMenu} alt='white_hamburgerMenu'></img>
             </div>
 
-            <Link to='/' className='navbar-logo-mobile'>
+            <Link to='/AppTest/home' className='navbar-logo-mobile'>
                     <img src={white_mobile_logoImage} alt='white_mobile_logoImage'></img>       
             </Link>
 

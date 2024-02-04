@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Locatie_Page = () => {
+export const LocatiePage = () => {
   return (
     <div>Pagina: Locatie</div>
   )

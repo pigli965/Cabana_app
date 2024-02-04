@@ -41,6 +41,7 @@
 
 .navbar-logo:hover {
     background: var(--third-color);
+    border-radius: 0px 0px 0px 10px;
     transition: all 0.25s ease-in;
 }
 
@@ -80,7 +81,7 @@
     justify-content: space-around;
     align-items: center;
     position: absolute;
-    left: 200px;
+    left: 15dvw;
 }
 
 .nav-event-item {

@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 //import Navbar from './components/Navbar';
-import { Finante_Page } from './pages/event/Finante_Page';
+import { FinantePage } from './pages/event/Finante_Page';
 import { DatePage } from './pages/event/Date_Page';
-import { Participanti_Page } from './pages/event/Participanti_Page';
-import { Autentificare_Page } from './pages/account/Autentificare_Page';
-import { Locatie_Page } from './pages/event/Locatie_Page';
-import { Transport_Page } from './pages/event/Transport_Page';
-import { Catering_Page } from './pages/event/Catering_Page';
-import { Activati_Page } from './pages/event/Activati_Page';
-import { Profil_Page } from './pages/account/Profil_Page';
-import { Notificari_Page } from './pages/account/Notificari_Page';
-import { Setari_Page } from './pages/account/Setari_Page';
-import Asistenta_Page from './pages/account/Asistenta_Page';
+import { ParticipantiPage } from './pages/event/Participanti_Page';
+import { AutentificarePage } from './pages/account/Autentificare_Page';
+import { LocatiePage } from './pages/event/Locatie_Page';
+import { TransportPage } from './pages/event/Transport_Page';
+import { CateringPage } from './pages/event/Catering_Page';
+import { ActivatiPage } from './pages/event/Activati_Page';
+import { ProfilPage } from './pages/account/Profil_Page';
+import { NotificariPage } from './pages/account/Notificari_Page';
+import { SetariPage } from './pages/account/Setari_Page';
+import AsistentaPage from './pages/account/Asistenta_Page';
 import { Navbar1, Navbar2, Navbar3 } from './components/Navbar2';
 import { SidebarHamburgerMenu , SidebarProfile  } from './components/Sidebars_Mobile_Menus';
 import { HomePage } from './pages/event/HomePage';
@@ -33,7 +33,22 @@ function App() {
   const [profile_MediumResolutionDropdownMenuActive, setProfile_MediumResolutionDropdownMenuActive] = useState(false);
   const [events_MediumResolutionDropdownMenuActive, setEvents_MediumResolutionDropdownMenuActive] = useState(false);
 
-  const showNavBar = () => {
+  // Define close functions within the component scope
+  const closeMaximumResolutioneMenus = useCallback(() => {
+    setProfile_DropdownMenuActive(false);
+  }, [setProfile_DropdownMenuActive]);
+
+  const closeMediumResolutioneMenus = useCallback(() => {
+    setEvents_MediumResolutionDropdownMenuActive(false);
+    setProfile_MediumResolutionDropdownMenuActive(false);
+  }, [setEvents_MediumResolutionDropdownMenuActive, setProfile_MediumResolutionDropdownMenuActive]);
+
+  const closeMobileMenus = useCallback(() => {
+    setEvents_mobile_MenuActive(false);
+    setProfile_mobile_DropdownMenuActive(false);
+  }, [setEvents_mobile_MenuActive, setProfile_mobile_DropdownMenuActive]);
+
+  const showNavBar = useCallback(() => {
     if (window.innerWidth > 1500) {
       setNavBar2000(true);
       closeMobileMenus();
@@ -55,13 +70,22 @@ function App() {
     } else {
       setNavBar1100(false);
     }
-  };
+  }, [setNavBar2000, setNavBar1500, setNavBar1100, closeMobileMenus, closeMediumResolutioneMenus, closeMaximumResolutioneMenus]);
+
+  const memoizedShowNavBar = useMemo(() => showNavBar, [showNavBar]);
 
   useEffect(() => {
-    showNavBar();
-  }, []);
+    memoizedShowNavBar();
+  }, [memoizedShowNavBar]);
 
-  window.addEventListener('resize', showNavBar);
+  useEffect(() => {
+    window.addEventListener('resize', memoizedShowNavBar);
+
+    return () => {
+      window.removeEventListener('resize', memoizedShowNavBar);
+    };
+  }, [memoizedShowNavBar]);
+
 //#region Maximum Resolution Profile Dropdown Menu 
   const triggerDropdownMenu = () => {
       setProfile_DropdownMenuActive(!profile_DropdownMenuActive);
@@ -88,22 +112,6 @@ function App() {
     setEvents_mobile_MenuActive(false);
   };
 //#endregion
- 
-
-
-  const closeMaximumResolutioneMenus = () => {
-    setProfile_DropdownMenuActive(false);
-  }
-
-  const closeMediumResolutioneMenus = () => {
-    setEvents_MediumResolutionDropdownMenuActive(false);
-    setProfile_MediumResolutionDropdownMenuActive(false);
-  }
-
-  const closeMobileMenus = () => {
-    setEvents_mobile_MenuActive(false);
-    setProfile_mobile_DropdownMenuActive(false);
-  }
 
   return (
     <div className='app-container'>
@@ -144,23 +152,23 @@ function App() {
 
           <Routes>
             {/* Home Page */}
-            <Route path='/' exact element={<HomePage />}/>
+            <Route path='/AppTest/home' exact element={<HomePage />}/>
 
             {/* Event Pages */}
-            <Route path='/alege-data' element={<DatePage />} />
-            <Route path='/participanti' element={<Participanti_Page/>} />
-            <Route path='/finante' element={<Finante_Page/>} />
-            <Route path='/locatie' element={<Locatie_Page/>} />
-            <Route path='/transport' element={<Transport_Page/>} />
-            <Route path='/catering' element={<Catering_Page/>} />
-            <Route path='/activitati' element={<Activati_Page/>} />          
+            <Route path='/AppTest/alege-data' element={<DatePage />} />
+            <Route path='/AppTest/participanti' element={<ParticipantiPage/>} />
+            <Route path='/AppTest/finante' element={<FinantePage/>} />
+            <Route path='/AppTest/locatie' element={<LocatiePage/>} />
+            <Route path='/AppTest/transport' element={<TransportPage/>} />
+            <Route path='/AppTest/catering' element={<CateringPage/>} />
+            <Route path='/AppTest/activitati' element={<ActivatiPage/>} />          
 
             {/* Account Pages */}
-            <Route path='/profil' element={<Profil_Page/>} />
-            <Route path='/notificari' element={<Notificari_Page/>} />
-            <Route path='/setari' element={<Setari_Page/>} />
-            <Route path='/asistenta' element={<Asistenta_Page/>} />
-            <Route path='/autentificare' element={<Autentificare_Page/>} />
+            <Route path='/AppTest/profil' element={<ProfilPage/>} />
+            <Route path='/AppTest/notificari' element={<NotificariPage/>} />
+            <Route path='/AppTest/setari' element={<SetariPage/>} />
+            <Route path='/AppTest/asistenta' element={<AsistentaPage/>} />
+            <Route path='/AppTest/autentificare' element={<AutentificarePage/>} />
           </Routes>
         </div>
         

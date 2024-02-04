@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Transport_Page = () => {
+export const TransportPage = () => {
   return (
     <div>Pagina: Transport</div>
   )

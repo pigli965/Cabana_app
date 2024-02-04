@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Activati_Page = () => {
+export const ActivatiPage = () => {
   return (
     <div>Pagina: Activati</div>
   )

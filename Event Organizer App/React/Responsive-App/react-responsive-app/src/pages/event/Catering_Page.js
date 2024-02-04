@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Catering_Page = () => {
+export const CateringPage = () => {
   return (
     <div>Pagina: Catering</div>
   )

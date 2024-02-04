@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Participanti_Page = () => {
+export const ParticipantiPage = () => {
   return (
     <div>Pagina: Participanti</div>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Profil_Page = () => {
+export const ProfilPage = () => {
   return (
     <div>Pagina: Profil</div>
   )

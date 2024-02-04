@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Setari_Page = () => {
+export const SetariPage = () => {
   return (
     <div>Setari_Page</div>
   )

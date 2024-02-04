@@ -1,6 +1,7 @@
 :root {
     --primary-color: #FFFFFF;
     --secondary-color: #a17cce;
+    --secondary-color-transparent: #ae8fd4f1;
     --third-color: #6A0DAD;
     --primary-text-color: #FFF;
     --secondary-text-color: #000;
@@ -10,60 +11,245 @@
     --margins-left-right: 0.5dvw;
 }
 
-.card-container {
+/* Cards-container */
+.cards-container {
     display: flex;
     position: relative;  
-    width: 99vw;  
+    width: 95vw;  
     height: calc(100dvh - var(--navbar-height) - var(--footer-height) - (var(--margins-top-bottom) * 2));
     justify-content: flex-start; /* Add this line to space the child elements */
     top: var(--margins-top-bottom);
-    /* left: 0; */
-    margin-left: var(--margins-left-right);
-    margin-right: var(--margins-left-right);
+    margin-inline: auto;
+    margin: auto;
     gap: 5dvw;
     align-items: center;
 }
 
+/* Overview-card */
 .overview-card {
-    display: inline-block;
+    display: flex;
     position: relative;
+    flex-direction: column;
     text-align: center;
+    align-items: center;
     width: 25dvw;
     /* min-height: calc(100dvh - var(--navbar-height) - var(--footer-height) - (var(--margins-top-bottom)*2)); */
     height: 100%;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
     background: var(--secondary-color);
 }
+.overview-small-card {
+    display: inline-block;
+    position: relative;
+    /* text-align: center; */
+    width: 95%;
+    /* height: 95%; */
+    margin-inline: auto;
+    margin-bottom: 1dvh;
+    /* padding: 10px; */
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    background: var(--secondary-color-transparent);
+}
+.overview-small-card-title {
+    display: inline-block;
+    position: relative;
+    width: 65%;
+    margin-inline: auto;
+    /* margin-left: 2.5%;
+    margin-right: 2.5%; */
+    margin-bottom: 1.5dvh;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    background: var(--secondary-color-transparent);
+}
 
+/* Overview-card-titles */
 .overview-card .overview-card-title {
     margin: 0;
     color: var(--primary-text-color);
+    font-size: 1.5dvw;
+    padding: 0.3dvh 1dvw;
 }
-
-.overview-card .overview-card-date {
+.overview-card .overview-card-date-title {
     text-align: start;
-    margin: 0;
+    /* margin-top: 10px; */
+    padding: 1dvh;
+    font-size: 1dvw;
+    color: var(--primary-text-color);
+}
+.overview-card .overview-card-numar-title {
+    text-align: start;
+    margin-top: 0;
+    padding: 1dvh;
+    font-size: 1dvw;
+    color: var(--primary-text-color);
+}
+.overview-card .overview-card-locatie-title {
+    text-align: start;
+    /* margin-top: 5px; */
+    padding: 1dvh;
+    font-size: 1dvw;
+    color: var(--primary-text-color);
+}
+.overview-card .overview-card-transport-title {
+    text-align: start;
+    /* margin-top: 10px; */
+    padding: 1dvh;
+    font-size: 1dvw;
+    color: var(--primary-text-color);
+}
+.overview-card .overview-card-catering-title {
+    text-align: start;
+    /* margin-top: 10px; */
+    padding: 1dvh;
+    font-size: 1dvw;
+    color: var(--primary-text-color);
+}
+.overview-card .overview-card-activitati-title {
+    text-align: start;
+    /* margin-top: 10px; */
+    padding: 1dvh;
+    font-size: 1dvw;
     color: var(--primary-text-color);
 }
 
+/* Overview-card-Items */
+.overview-card .overview-card-locatie-item {
+    text-align: start;
+    margin-top: 1px;
+    margin-left: 0.5dvw;
+    margin-bottom: 5px;
+    padding: 0.2dvh;
+    font-size: 0.8dvw;
+    color: var(--primary-text-color);
+}
+.overview-card .overview-card-transport-item {
+    text-align: start;
+    margin-top: 1px;
+    margin-left: 0.5dvw;
+    padding: 0.2dvh;
+    font-size: 0.8dvw;
+    color: var(--primary-text-color);
+}
+.overview-card .overview-card-catering-item {
+    text-align: start;
+    margin-top: 1px;
+    margin-left: 0.5dvw;
+    padding: 0.2dvh;
+    font-size: 0.8dvw;
+    color: var(--primary-text-color);
+}
+.overview-card .overview-card-activitati-item {
+    text-align: start;
+    margin-top: 1px;
+    margin-left: 0.5dvw;
+    padding: 0.2dvh;
+    font-size: 0.8dvw;
+    color: var(--primary-text-color);
+}
+
+/* Tutorial-card */
 .tutorial-card {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     flex: 1;
     text-align: center;
     width: 62dvw;
-    /* min-height: calc(100dvh - var(--navbar-height) - var(--footer-height) - (var(--margins-top-bottom)*2)); */
     height: 100%;
-    padding: 20px;
+    padding: 10px;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); 
+    background: var(--secondary-color);
+}
+.tutorial-small-card-title {
+    display: inline-flex;
+    position: relative;
+    justify-self: center;
+    /* width: 15%; */
+    margin-inline: auto;
+    /* margin-left: 2.5%;
+    margin-right: 2.5%; */
+    margin-bottom: 2dvh;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
-    background: var(--secondary-color);
+    background: var(--secondary-color-transparent);
 }
-
+.tutorial-small-card-video {
+    display: inline-block;
+    position: relative;
+    width: 95%;
+    height: 80%;
+    margin-inline: auto;
+    margin-bottom: 2dvh;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    background: var(--secondary-color-transparent);
+}
+.tutorial-small-card-pages {
+    display: inline-flex;
+    position: relative;
+    /* width: 30%; */
+    /* height: 5%; */
+    margin-inline: auto;
+    /* margin-top: 2dvh;
+    margin-bottom: 2dvh; */
+    margin: auto;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    background: var(--secondary-color-transparent);
+}
 .tutorial-card .tutorial-card-title {
     margin: 0;
     color: var(--primary-text-color);
+    font-size: 1.5dvw;
+    padding: 0.3dvh 2dvw;
+}
+.tutorial-card .tutorial-card-button-pages {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 2px;
+    background: transparent;
+    border: 0px solid hsl(0, 0%, 80%);
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px hsl(0, 0%, 0%, 0.1); 
+}
+.homepage-tutorial-button {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 2px;
+    background: transparent;
+    border: 0px solid hsl(0, 0%, 80%);
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px hsl(0, 0%, 0%, 0.1);
+}
+
+.tutorial-card .tutorial-small-card-video video {
+    /* display: block;
+    align-items: center;
+    position: relative;
+    height: 95%;
+    width: 97%;
+    margin-inline: auto;
+    margin: auto;
+    top: 2.5%;
+    object-fit: fill; */
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
 }

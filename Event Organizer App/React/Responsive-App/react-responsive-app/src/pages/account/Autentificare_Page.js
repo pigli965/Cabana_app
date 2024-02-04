@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Autentificare_Page = () => {
+export const AutentificarePage = () => {
   return (
     <div>Pagina: Autentificare</div>
   )
