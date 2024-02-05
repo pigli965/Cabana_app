@@ -9,15 +9,15 @@ export const SidebarHamburgerMenu = ({events_mobile_MenuActive}) => {
           <ul className={events_mobile_MenuActive ? 'flow nav-mobile-events-menu active' : 'flow nav-mobile-events-menu'}>               
                 <Link to='/AppTest/alege-data' className='nav-mobile-event-item' >
                   Alege Data
-                  <div className='left-indicator'></div> 
+                  {/* <div className='left-indicator'></div>  */}
                 </Link>                 
                 <Link to='/AppTest/participanti' className='nav-mobile-event-item' >
                   Participanti
-                  <div className='left-indicator'></div> 
+                  {/* <div className='left-indicator'></div>  */}
                 </Link>        
                 <Link to='/AppTest/finante' className='nav-mobile-event-item' >
                   Finante
-                  <div className='left-indicator'></div> 
+                  {/* <div className='left-indicator'></div>  */}
                 </Link>                 
                 <Link to='/AppTest/locatie' className='nav-mobile-event-item' >
                   Locatie<
@@ -25,15 +25,15 @@ export const SidebarHamburgerMenu = ({events_mobile_MenuActive}) => {
                 </Link>                 
                 <Link to='/AppTest/transport' className='nav-mobile-event-item' >
                   Transport
-                  <div className='left-indicator'></div> 
+                  {/* <div className='left-indicator'></div>  */}
                 </Link>                  
                 <Link to='/AppTest/catering' className='nav-mobile-event-item' >
                   Catering
-                  <div className='left-indicator'></div> 
+                  {/* <div className='left-indicator'></div>  */}
                 </Link>               
                 <Link to='/AppTest/activitati' className='nav-mobile-event-item' >
                   Activitati
-                  <div className='left-indicator'></div> 
+                  {/* <div className='left-indicator'></div>  */}
                 </Link>
                                   
             </ul>           

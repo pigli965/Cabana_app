@@ -7,12 +7,15 @@
 }
 
 .navBar-container { 
+    container-type: inline-size;
     display: flex;
     justify-content: flex-start;
-    height: 10dvh;
+    /* height: 10dvh; */
+    height: 10cqh;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 999;
     width: 100dvw;
     border-bottom-left-radius: 10px;
@@ -47,7 +50,7 @@
 
 .navbar-profile-menu img {
     min-height: 100%;
-    height: 5dvh;
+    height: 5cqh;
     display: block; 
     margin: 0 auto; 
 }
@@ -56,7 +59,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    position: absolute;
+    position: fixed;
     right: 0;
     cursor: pointer;
     text-decoration: none;
@@ -68,7 +71,7 @@
     display: flex;
     justify-self: flex-start;
     align-items: center;
-    position: absolute;
+    position: fixed;
     right: 0;
     cursor: pointer;
     text-decoration: none;
@@ -80,8 +83,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: absolute;
-    left: 15dvw;
+    position: fixed;
+    left: 15cqi;
 }
 
 .nav-event-item {
@@ -90,7 +93,8 @@
     text-decoration: none;
     padding: 20px 20px 20px 20px;
     height: 100%;
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
+    font-size: 1.6cqi;
 }
 
 .nav-event-item:hover {
@@ -107,7 +111,8 @@
     text-decoration: none;
     padding: 20px;
     height: 100%;
-    font-size: 1.6rem;
+    /* font-size: 1.6rem; */
+    font-size: 1.6cqi;
 }
 
 .nav-event-menu-item:hover {
@@ -122,10 +127,10 @@
 .profile_dropdown-menu {
     display: none;
     flex-direction: column;
-    width: 10vw;
-    min-height: 40vh;
-    position: absolute;
-    top: 10vh;
+    width: 10cqi;
+    min-height: 40cqh;
+    position: fixed;
+    top: 10cqh;
     right: 0;
     opacity: 1;
     border-radius: 0px 10px 10px 10px;
@@ -142,11 +147,11 @@
 }
 
 .flow > :where(:first-child) {
-    margin-top: 1dvh;
+    margin-top: 1cqh;
 }
 
 .flow > :where(:first-child):hover {
-    margin-top: 1dvh;
+    margin-top: 1cqh;
 }
 
 .nav-profile-dropdown-item {
@@ -155,8 +160,9 @@
     color: var(--primary-text-color);
     align-items: center;
     text-decoration: none;
-    padding: 1dvh 3dvw;
-    font-size: 1.1dvw;
+    padding: 1cqh 2cqi;
+    /* font-size: 1.1dvw; */
+    font-size: 1.2cqi;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom: 4px solid var(--third-color);
@@ -170,14 +176,14 @@
 } 
 
 .profile_dropdown-menu-active:hover {
-    background: #fff;
+    background: var(--primary-color);
 }
 
 .events_dropdown-menu {
     display: none;
     flex-direction: column;
     width: 140px;
-    min-height: 30vh;
+    min-height: 30cqh;
     position: absolute;
     top: 10vh;
     right: -3dvw;
@@ -196,21 +202,23 @@
 
 /* Navigation Bar Tablet / Mobile Phone*/
 .navBar-mobile-container { 
+    container-type: inline-size;
     display: flex;
     justify-content: space-between;
-    min-height: 10vh;
+    min-height: 10cqh;
     align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     z-index: 999;
-    width: 100%;
+    width: 100cqi;
     margin-inline: auto;
     border-radius: 0px 0px 10px 10px;
     background: var(--secondary-color);
 }
 
 .nav-mobile-profile-item:hover {
-    color: #000;
+    color: var(--secondary-text-color);
     background-color: #858983;
     transition: all 0.2s ease-out;
 }

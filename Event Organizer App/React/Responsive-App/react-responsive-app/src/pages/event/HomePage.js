@@ -66,10 +66,10 @@ export const HomePage = () => {
           <h2 className='overview-card-title'>Detalii Eveniment</h2>
         </div>       
         
-        <div className='overview-small-card'>
+        <div className='overview-small-card-date'>
           <p className='overview-card-date-title'>Data Eveniment: 10-13 Jun:</p>
         </div>
-        <div className='overview-small-card'>
+        <div className='overview-small-card-maxnumber'>
           <p className='overview-card-numar-title'>Numar Participanti: 30</p>
         </div>
         

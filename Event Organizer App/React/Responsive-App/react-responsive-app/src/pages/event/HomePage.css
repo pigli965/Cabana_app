@@ -5,64 +5,94 @@
     --third-color: #6A0DAD;
     --primary-text-color: #FFF;
     --secondary-text-color: #000;
-    --navbar-height: 10dvh;
-    --footer-height: 3dvh;
-    --margins-top-bottom: 3dvh;
-    --margins-left-right: 0.5dvw;
+    --navbar-height: 10cqh;
+    --footer-height: 3cqh;
+    --margins-top-bottom: 3.5cqh;
+    --margins-left-right: 0.5cqh;
+    --font-size-h1: 3.2cqh;
+    --font-size-h2: 2.2cqh;
+    --font-size-h3: 1.7cqh;
 }
 
 /* Cards-container */
 .cards-container {
+    container-type: inline-size;
     display: flex;
-    position: relative;  
-    width: 95vw;  
-    height: calc(100dvh - var(--navbar-height) - var(--footer-height) - (var(--margins-top-bottom) * 2));
+    position: absolute;  
+    width: 96cqi;  
+    height: 80cqh;
     justify-content: flex-start; /* Add this line to space the child elements */
-    top: var(--margins-top-bottom);
+    top: var(--navbar-height);
     margin-inline: auto;
-    margin: auto;
-    gap: 5dvw;
-    align-items: center;
+    margin-top: var(--margins-top-bottom);
+    gap: 5%;
 }
 
 /* Overview-card */
 .overview-card {
+    container-type: inline-size;
     display: flex;
     position: relative;
     flex-direction: column;
+    justify-content: space-around;
     text-align: center;
-    align-items: center;
-    width: 25dvw;
-    /* min-height: calc(100dvh - var(--navbar-height) - var(--footer-height) - (var(--margins-top-bottom)*2)); */
+    width: 25%;
     height: 100%;
-    padding: 10px;
+    padding: 0.5%;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
     background: var(--secondary-color);
 }
-.overview-small-card {
+.overview-small-card-title {
     display: inline-block;
     position: relative;
-    /* text-align: center; */
-    width: 95%;
-    /* height: 95%; */
+    width: 65%;
+    height: 6%;
     margin-inline: auto;
-    margin-bottom: 1dvh;
-    /* padding: 10px; */
+    text-align: center;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
     background: var(--secondary-color-transparent);
 }
-.overview-small-card-title {
+.overview-small-card-date {
+    container-type: inline-size;
     display: inline-block;
     position: relative;
-    width: 65%;
+    width: 95%;
+    height: 4.5%;
     margin-inline: auto;
-    /* margin-left: 2.5%;
-    margin-right: 2.5%; */
-    margin-bottom: 1.5dvh;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    text-align: center;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    background: var(--secondary-color-transparent);
+}
+.overview-small-card-maxnumber {
+    container-type: inline-size;
+    display: inline-block;
+    position: relative;
+    width: 95%;
+    height: 4.5%;
+    margin-inline: auto;
+    margin-bottom: 2%;
+    text-align: center;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    background: var(--secondary-color-transparent);
+}
+.overview-small-card {
+    container-type: inline-size;
+    display: inline-block;
+    position: relative;
+    width: 95%;
+    margin-inline: auto;
+    margin-bottom: 2%;
+    align-items: center;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
@@ -70,113 +100,67 @@
 }
 
 /* Overview-card-titles */
-.overview-card .overview-card-title {
-    margin: 0;
+.overview-small-card-title .overview-card-title {
     color: var(--primary-text-color);
-    font-size: 1.5dvw;
-    padding: 0.3dvh 1dvw;
+    font-size: var(--font-size-h1);
+    padding: 0% 5%;
 }
-.overview-card .overview-card-date-title {
+.overview-small-card-date .overview-card-date-title,
+.overview-small-card-maxnumber .overview-card-numar-title {
     text-align: start;
-    /* margin-top: 10px; */
-    padding: 1dvh;
-    font-size: 1dvw;
-    color: var(--primary-text-color);
-}
-.overview-card .overview-card-numar-title {
-    text-align: start;
-    margin-top: 0;
-    padding: 1dvh;
-    font-size: 1dvw;
+    padding: 1% 5%;
+    font-size: var(--font-size-h2);
     color: var(--primary-text-color);
 }
-.overview-card .overview-card-locatie-title {
+.overview-small-card .overview-card-locatie-title,
+.overview-small-card .overview-card-transport-title,
+.overview-small-card .overview-card-catering-title,
+.overview-small-card .overview-card-activitati-title {
     text-align: start;
-    /* margin-top: 5px; */
-    padding: 1dvh;
-    font-size: 1dvw;
-    color: var(--primary-text-color);
-}
-.overview-card .overview-card-transport-title {
-    text-align: start;
-    /* margin-top: 10px; */
-    padding: 1dvh;
-    font-size: 1dvw;
-    color: var(--primary-text-color);
-}
-.overview-card .overview-card-catering-title {
-    text-align: start;
-    /* margin-top: 10px; */
-    padding: 1dvh;
-    font-size: 1dvw;
-    color: var(--primary-text-color);
-}
-.overview-card .overview-card-activitati-title {
-    text-align: start;
-    /* margin-top: 10px; */
-    padding: 1dvh;
-    font-size: 1dvw;
+    padding: 1% 5%;
+    font-size: var(--font-size-h2);
     color: var(--primary-text-color);
 }
 
 /* Overview-card-Items */
-.overview-card .overview-card-locatie-item {
+.overview-small-card .overview-card-locatie-item,
+.overview-small-card .overview-card-transport-item,
+.overview-small-card .overview-card-catering-item,
+.overview-small-card .overview-card-activitati-item {
     text-align: start;
-    margin-top: 1px;
-    margin-left: 0.5dvw;
-    margin-bottom: 5px;
-    padding: 0.2dvh;
-    font-size: 0.8dvw;
+    margin-top: 1%;
+    padding: 1% 5%;
+    font-size: var(--font-size-h3);
     color: var(--primary-text-color);
-}
-.overview-card .overview-card-transport-item {
-    text-align: start;
-    margin-top: 1px;
-    margin-left: 0.5dvw;
-    padding: 0.2dvh;
-    font-size: 0.8dvw;
-    color: var(--primary-text-color);
-}
-.overview-card .overview-card-catering-item {
-    text-align: start;
-    margin-top: 1px;
-    margin-left: 0.5dvw;
-    padding: 0.2dvh;
-    font-size: 0.8dvw;
-    color: var(--primary-text-color);
-}
-.overview-card .overview-card-activitati-item {
-    text-align: start;
-    margin-top: 1px;
-    margin-left: 0.5dvw;
-    padding: 0.2dvh;
-    font-size: 0.8dvw;
-    color: var(--primary-text-color);
+    overflow: hidden; /* Add this line to hide overflow */
+    white-space: nowrap; /* Optional: Prevent text from wrapping */
+    text-overflow: ellipsis; /* Optional: Show ellipsis for overflowed text */
 }
 
 /* Tutorial-card */
 .tutorial-card {
+    container-type: inline-size;
     display: flex;
+    position: relative;
     flex-direction: column;
-    flex: 1;
+    justify-content: space-around;
     text-align: center;
-    width: 62dvw;
+    width: 70%;
     height: 100%;
-    padding: 10px;
+    padding: 0.5%;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); 
     background: var(--secondary-color);
 }
 .tutorial-small-card-title {
-    display: inline-flex;
+    /* container-type: inline-size; */
+    display: inline-block;
     position: relative;
-    justify-self: center;
-    /* width: 15%; */
+    width: 15%;
+    height: 6%;
     margin-inline: auto;
-    /* margin-left: 2.5%;
-    margin-right: 2.5%; */
-    margin-bottom: 2dvh;
+    margin-bottom: 1%;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
@@ -188,7 +172,7 @@
     width: 95%;
     height: 80%;
     margin-inline: auto;
-    margin-bottom: 2dvh;
+    margin-bottom: 2%;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
@@ -197,29 +181,24 @@
 .tutorial-small-card-pages {
     display: inline-flex;
     position: relative;
-    /* width: 30%; */
-    /* height: 5%; */
     margin-inline: auto;
-    /* margin-top: 2dvh;
-    margin-bottom: 2dvh; */
-    margin: auto;
+    margin-bottom: 1%;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
     background: var(--secondary-color-transparent);
 }
-.tutorial-card .tutorial-card-title {
-    margin: 0;
+.tutorial-small-card-title .tutorial-card-title {
     color: var(--primary-text-color);
-    font-size: 1.5dvw;
-    padding: 0.3dvh 2dvw;
+    font-size: var(--font-size-h1);
+    padding: 0% 5%;
 }
-.tutorial-card .tutorial-card-button-pages {
+.tutorial-small-card-pages .tutorial-card-button-pages {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     position: relative;
-    padding: 2px;
+    padding: 1% 0%;
     background: transparent;
     border: 0px solid hsl(0, 0%, 80%);
     border-radius: 0px;
@@ -246,10 +225,107 @@
     margin: auto;
     top: 2.5%;
     object-fit: fill; */
-    display: block;
-    width: 100%;
+    display: inline-block;
+    width: 98%;
     max-width: 100%;
-    height: auto;
+    height: 100%;
     max-height: 100%;
-    object-fit: contain;
+    /* margin-top: 0.5%; */
+    object-fit: fill;
+}
+
+/* New Small Tablets - Portrait Mode  */
+@container and (max-width: 1100px) and (max-height: 1400px) {
+    .nav-mobile-event-item {
+        font-size: 2.5dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 2.5dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+}
+
+/* New Small Tablets - Square Tablet  */
+@container and (max-width: 1100px) and (max-height: 1100px) {
+    .nav-mobile-event-item {
+        font-size: 2.5dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 2.5dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+}
+
+/* Old Small Tablets - Portrait Mode  */
+@container and (max-width: 1100px) and (max-height: 700px) {
+    .nav-mobile-event-item {
+        font-size: 2.5dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 2.5dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+}
+
+/* Old Small Tablets - Landscape Mode  */
+@container and (max-width: 700px) and (max-height: 1100px) {
+    .nav-mobile-event-item {
+        font-size: 4dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 4dvw;
+        padding: 1.5dvh 3.5dvw;
+    }
+}
+
+/* New Mobile Phones - Portrait Mode  */
+@container and (max-width: 500px) and (max-height: 1000px) {
+    .nav-mobile-event-item {
+        font-size: 4dvw;
+        padding: 1.5dvh 3dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 4dvw;
+        padding: 1.5dvh 3dvw;
+    }
+}
+
+/* New Mobile Phones - Landscape Mode */
+@container and (max-width: 1000px) and (max-height: 500px) {
+    .nav-mobile-event-item {
+        font-size: 1.8dvw;
+        padding: 1.5dvh 4dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 1.8dvw;
+        padding: 1.5dvh 4dvw;
+    }
+}
+
+/* Old Mobile Phones - Portrait Mode  */
+@container and (max-width: 500px) and (max-height: 700px) {
+    .nav-mobile-event-item {
+        font-size: 4dvw;
+        padding: 1.5dvh 3dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 4dvw;
+        padding: 1.5dvh 3dvw;
+    }
+}
+
+/* Old Mobile Phones - Landscape Mode  */
+@container and (max-width: 700px) and (max-height: 500px) {
+    .nav-mobile-event-item {
+        font-size: 2dvw;
+        padding: 1.5dvh 4dvw;
+    }
+    .nav-mobile-profile-item {
+        font-size: 2dvw;
+        padding: 1.5dvh 4dvw;
+    }
 }
