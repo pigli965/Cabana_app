@@ -1,16 +1,37 @@
 :root {
     --primary-color: #FFFFFF;
     --secondary-color: #a17cce;
+    --secondary-color-transparent: #ae8fd4f1;
     --third-color: #6A0DAD;
     --primary-text-color: #FFF;
     --secondary-text-color: #000;
-    --navbar-height: 10dvh;
-    --footer-height: 3dvh;
-    --margins-top-bottom: 5dvh;
+    --navbar-height: 10cqh;
+    --footer-height: 3cqh;
+    --margins-top-bottom: 3.5cqh;
+    --margins-left-right: 0.5cqh;
+    --font-size-h1: 3.2cqh;
+    --font-size-h2: 2.5cqh;
+    --font-size-h3: 1.7cqh;
+    --font-family: font-family: 'PT Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+}
+
+/* datePage-container */
+.datePage-container {
+    container-type: inline-size;
+    display: flex;
+    position: absolute;  
+    width: 96cqi;  
+    height: 80cqh;
+    justify-content: flex-start; /* Add this line to space the child elements */
+    top: var(--navbar-height);
+    margin-inline: auto;
+    margin-top: var(--margins-top-bottom);
+    /* gap: 5%; */
+    border: 4px solid black;
 }
 
 /* Add a class for the wrapper div */
-.date-page-wrapper {
+/* .date-page-wrapper {
     display: flex;
     position: absolute;
     left: 5vw;
@@ -18,46 +39,111 @@
     width: 90vw;
     height: calc(100dvh - var(--navbar-height) - var(--footer-height) - var(--margins-top-bottom));
     overflow: auto;
-    justify-content: space-between; /* Add this line to space the child elements */
-}
-
-/* Style for the container */
-.container {
-    display: flex;
-    position: relative;
-    top: 15dvh;
     justify-content: space-between;
-    margin: 20px;
-}
-
-.Add-button {
-    width: 20vw;
-    height: 5vh;
-}
-
-.Max-Participants {
-    margin-top: 3vh;
-}
+} */
 
 /* Style for the input container */
-.input-container {
-    flex: 1; /* Make the input container take the available space */
-    margin-right: 20px;
-    font-size: 1.1vw;
+.inputField-container {
+    container-type: inline-size;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    width: 30%;
+    height: 100%;
+    gap: 2%;
+    padding: 1.5% 0%;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    background: var(--secondary-color);
+    overflow-y: auto;
 }
-
+.inputField-item-number{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;  /* Center items vertically */
+    width: 90%;
+    height: 10%;
+    min-height: 10%;
+    gap: 2%;
+    /* padding: 0% 5%; */
+    margin-inline: auto;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    background: var(--secondary-color-transparent);
+}
+.inputField-item-date{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;  /* Center items vertically */
+    width: 90%;
+    height: 10%;
+    min-height: 10%;
+    gap: 2%;
+    /* padding: 0% 5%; */
+    margin-inline: auto;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    background: var(--secondary-color-transparent);
+}
 /* Style for input labels */
-label {
-    display: block;
-    margin-bottom: 8px;
+.dateLabel {
+    text-align: center;  /* Center text horizontally */
+    font-size: 1dvw;
+    font-family: var(--font-family);
+    margin-left: 5%;
+}
+/* Style for input fields */
+.inputField-date {
+    text-align: center;  /* Center text horizontally */
+    font-size: 1dvw;
+    font-family: var(--font-family);
+    border-radius: 10px;
+}
+.Max-Participants {
+    text-align: center;  /* Center text horizontally */
+    font-size: 1dvw;
+    font-family: var(--font-family);
+    margin-left: 5%;
+}
+.inputField-maxNumber {
+    width: 22%;
+    text-align: center;  /* Center text horizontally */
+    font-size: 1dvw;
+    font-family: var(--font-family);
+    border-radius: 10px;
+}
+.Add-button {
+    background: var(--third-color);
+    color: var(--primary-text-color);
+    width: 90%;
+    height: 10%;
+    min-height: 10%;
+    margin-inline: auto;
+    text-align: center;  /* Center text horizontally */
+    font-size: 1dvw;
+    font-family: var(--font-family);
+    border-radius: 10px;
+}
+.Remove-button {
+    background: var(--third-color);
+    color: var(--primary-text-color);
+    width: 25%;
+    height: 50%;
+    margin-inline: auto;
+    text-align: center;  /* Center text horizontally */
+    font-size: 1dvw;
+    font-family: var(--font-family);
+    border-radius: 7px;
 }
 
-/* Style for input fields */
-input {
-    margin-bottom: 12px;
-    padding: 8px;
-    font-size: 1.1vw;
-}
+
 
 /* Style for the table container */
 .table-container {

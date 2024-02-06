@@ -19,25 +19,36 @@ export const DatePage = () => {
     setDates(newDates);
   };
 
+  // Function to remove a date input
+  const removeDateInput = (index) => {
+    const newDates = [...dates];
+    newDates.splice(index, 1);
+    setDates(newDates);
+  };
+
   // Function to add a new date input
   const addDateInput = () => {
     setDates([...dates, '']);
   };
 
   return (
-    <div className="date-page-wrapper">
-      <div className="input-container">
+    <div className="datePage-container">
+      <div className="inputField-container">
         {/* Input fields for dates and maxParticipants */}
+        <div className='inputField-item-number'>
+          <label className='Max-Participants'>Nr. maxim participati: </label>
+          <input className='inputField-maxNumber' type="number" value={maxParticipants} onChange={handleMaxParticipantsChange} />
+        </div>
+        <button className='Add-button' onClick={addDateInput}>Adauga Data</button>
         {dates.map((date, index) => (
-          <div key={index}>
-            <label>Date {index + 1}: <input type="string" value={date} onChange={(e) => handleDateChange(index, e.target.value)} /></label>
+          <div className='inputField-item-date' key={index}>
+            <label className='dateLabel'>
+              Data {index + 1}: 
+            </label>
+            <input className='inputField-date' type="string" value={date} onChange={(e) => handleDateChange(index, e.target.value)} />
+            <button className='Remove-button' onClick={() => removeDateInput(index)}>Sterge Data</button>
           </div>
         ))}
-        <button className='Add-button' onClick={addDateInput}>+</button>
-
-        <label className='Max-Participants'>Max Participants: <input type="number" value={maxParticipants} onChange={handleMaxParticipantsChange} /></label>
-
-        
       </div>
 
       <div className="table-container">
