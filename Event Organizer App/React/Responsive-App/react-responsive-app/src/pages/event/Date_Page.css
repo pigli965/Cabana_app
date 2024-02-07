@@ -22,25 +22,13 @@
     position: absolute;  
     width: 96cqi;  
     height: 80cqh;
-    justify-content: flex-start; /* Add this line to space the child elements */
     top: var(--navbar-height);
+    justify-content: flex-start;
+    gap: 5%;
     margin-inline: auto;
     margin-top: var(--margins-top-bottom);
-    /* gap: 5%; */
     border: 4px solid black;
 }
-
-/* Add a class for the wrapper div */
-/* .date-page-wrapper {
-    display: flex;
-    position: absolute;
-    left: 5vw;
-    top: 15vh;
-    width: 90vw;
-    height: calc(100dvh - var(--navbar-height) - var(--footer-height) - var(--margins-top-bottom));
-    overflow: auto;
-    justify-content: space-between;
-} */
 
 /* Style for the input container */
 .inputField-container {
@@ -58,18 +46,33 @@
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
     background: var(--secondary-color);
+    /* overflow-y: auto; */
+}
+
+.inputField-overflow {
+    container-type: inline-size;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    width: 90%;
+    height: 100%;
+    gap: 2%;
+    padding: 1.5% 0%;
+    margin-inline: auto;
     overflow-y: auto;
 }
+
 .inputField-item-number{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;  /* Center items vertically */
-    width: 90%;
+    justify-content: flex-start;
+    width: 100%;
     height: 10%;
     min-height: 10%;
     gap: 2%;
-    /* padding: 0% 5%; */
     margin-inline: auto;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
@@ -80,12 +83,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;  /* Center items vertically */
-    width: 90%;
+    justify-content: flex-start;
+    width: 100%;
     height: 10%;
     min-height: 10%;
     gap: 2%;
-    /* padding: 0% 5%; */
     margin-inline: auto;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
@@ -94,35 +96,38 @@
 }
 /* Style for input labels */
 .dateLabel {
-    text-align: center;  /* Center text horizontally */
+    color: var(--primary-text-color);
+    text-align: center;
+    font-size: 1dvw;
+    font-family: var(--font-family);
+    margin-left: 5%;
+}
+.Max-Participants {
+    color: var(--primary-text-color);
+    text-align: center;
     font-size: 1dvw;
     font-family: var(--font-family);
     margin-left: 5%;
 }
 /* Style for input fields */
 .inputField-date {
-    text-align: center;  /* Center text horizontally */
+    text-align: center;
     font-size: 1dvw;
     font-family: var(--font-family);
     border-radius: 10px;
-}
-.Max-Participants {
-    text-align: center;  /* Center text horizontally */
-    font-size: 1dvw;
-    font-family: var(--font-family);
-    margin-left: 5%;
 }
 .inputField-maxNumber {
     width: 22%;
-    text-align: center;  /* Center text horizontally */
+    text-align: center;
     font-size: 1dvw;
     font-family: var(--font-family);
     border-radius: 10px;
 }
+/* Style for buttons */
 .Add-button {
     background: var(--third-color);
     color: var(--primary-text-color);
-    width: 90%;
+    width: 100%;
     height: 10%;
     min-height: 10%;
     margin-inline: auto;
@@ -143,37 +148,73 @@
     border-radius: 7px;
 }
 
-
-
 /* Style for the table container */
 .table-container {
+    container-type: inline-size;
     display: flex;
-    flex: 1; /* Make the table container take the available space */
-    top: 15vh;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    width: calc(100% - 30% - 5%);
+    height: 100%;
+    gap: 2%;
+    padding: 1.5% 0%;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    background: var(--secondary-color);
+    /* overflow-y: auto; */
+}
+
+.table-item {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: flex-start; */
+    width: 90%;
+    height: 100%;
+    min-height: 100%;
+    margin-inline: auto;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    background: var(--secondary-color-transparent);
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
 /* Style for the table */
 table {
     border-collapse: collapse;
     width: 100%;
+    min-width: 100%;
+    min-height: 15%;
+    overflow-x: auto;
+    
 }
 
 /* Style for table headers */
 th {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-    background-color: #f2f2f2;
+    width: 300;
+    /* width: calc(100% / 3);
+    min-width: calc(100% / 3);
+    max-width: calc(100% / 3); */
+    text-align: center;
     font-size: 1.3vw;
+    border: 1px solid var(--secondary-color);
+    background-color: var(--third-color);
 }
 
 /* Style for table rows */
 td {
-    border: 1px solid #ddd;
     padding: 8px;
+    text-align: start;
+    border: 1px solid var(--secondary-color);
+    background-color: var(--primary-color); 
 }
 
 /* Alternate background color for odd rows */
-tr:nth-child(odd) {
+/* tr:nth-child(odd) {
     background-color: #f9f9f9;
-}
+} */
