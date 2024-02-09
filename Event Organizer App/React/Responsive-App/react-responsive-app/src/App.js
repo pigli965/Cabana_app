@@ -116,64 +116,70 @@ function App() {
   return (
     <div className='app-container'>
       <Router>
-        <nav className={navBar2000 ? 'show-navBar2000' : 'hide-navBar2000'}>
-          <Navbar1 
-          triggerDropdownMenu={triggerDropdownMenu}
-          profile_DropdownMenuActive={profile_DropdownMenuActive}
-          />
-        </nav>
-        <nav className={navBar1500 ? 'show-navBar1500' : 'hide-navBar1500'}>
-          <Navbar2
-            triggerMediumResolution_DropdownMenu={triggerMediumResolution_DropdownMenu}
-            triggerMediumResolution_EventDropdownMenu={triggerMediumResolution_EventDropdownMenu}
-            profile_MediumResolutionDropdownMenuActive={profile_MediumResolutionDropdownMenuActive}
-            events_MediumResolutionDropdownMenuActive={events_MediumResolutionDropdownMenuActive}
-          />     
-        </nav>
-        <nav className={navBar1100 ? 'show-navBar1100' : 'hide-navBar1100'}>
-          <Navbar3 
-          triggerMobileEventsMenu={triggerMobileEventsMenu}
-          triggerMobileProfileDropdownMenu={triggerMobileProfileDropdownMenu}
-          />
-        </nav>         
+        <header className='app-header'>
+          <nav className={navBar2000 ? 'show-navBar2000' : 'hide-navBar2000'}>
+            <Navbar1 
+            triggerDropdownMenu={triggerDropdownMenu}
+            profile_DropdownMenuActive={profile_DropdownMenuActive}
+            />
+          </nav>
+          <nav className={navBar1500 ? 'show-navBar1500' : 'hide-navBar1500'}>
+            <Navbar2
+              triggerMediumResolution_DropdownMenu={triggerMediumResolution_DropdownMenu}
+              triggerMediumResolution_EventDropdownMenu={triggerMediumResolution_EventDropdownMenu}
+              profile_MediumResolutionDropdownMenuActive={profile_MediumResolutionDropdownMenuActive}
+              events_MediumResolutionDropdownMenuActive={events_MediumResolutionDropdownMenuActive}
+            />     
+          </nav>
+          <nav className={navBar1100 ? 'show-navBar1100' : 'hide-navBar1100'}>
+            <Navbar3 
+            triggerMobileEventsMenu={triggerMobileEventsMenu}
+            triggerMobileProfileDropdownMenu={triggerMobileProfileDropdownMenu}
+            />
+          </nav> 
+        </header>               
 
-        <div className='home'>
-
-          {events_mobile_MenuActive && (
-          <div>
-            <SidebarHamburgerMenu events_mobile_MenuActive={events_mobile_MenuActive} />
-          </div>
-          )}
-          {profile_mobile_DropdownMenuActive && (
-            <div>
-              <SidebarProfile profile_mobile_DropdownMenuActive={profile_mobile_DropdownMenuActive} />
-            </div>
-          )}
-
+        <main className='app-content'>
+          
           <Routes>
             {/* Home Page */}
-            <Route path='/AppTest/home' exact element={<HomePage />}/>
+            <Route path='/home' exact element={<HomePage />}/>
 
             {/* Event Pages */}
-            <Route path='/AppTest/alege-data' element={<DatePage />} />
-            <Route path='/AppTest/participanti' element={<ParticipantiPage/>} />
-            <Route path='/AppTest/finante' element={<FinantePage/>} />
-            <Route path='/AppTest/locatie' element={<LocatiePage/>} />
-            <Route path='/AppTest/transport' element={<TransportPage/>} />
-            <Route path='/AppTest/catering' element={<CateringPage/>} />
-            <Route path='/AppTest/activitati' element={<ActivatiPage/>} />          
+            <Route path='/alege-data' element={<DatePage />} />
+            <Route path='/participanti' element={<ParticipantiPage/>} />
+            <Route path='/finante' element={<FinantePage/>} />
+            <Route path='/locatie' element={<LocatiePage/>} />
+            <Route path='/transport' element={<TransportPage/>} />
+            <Route path='/catering' element={<CateringPage/>} />
+            <Route path='/activitati' element={<ActivatiPage/>} />          
 
             {/* Account Pages */}
-            <Route path='/AppTest/profil' element={<ProfilPage/>} />
-            <Route path='/AppTest/notificari' element={<NotificariPage/>} />
-            <Route path='/AppTest/setari' element={<SetariPage/>} />
-            <Route path='/AppTest/asistenta' element={<AsistentaPage/>} />
-            <Route path='/AppTest/autentificare' element={<AutentificarePage/>} />
+            <Route path='/profil' element={<ProfilPage/>} />
+            <Route path='/notificari' element={<NotificariPage/>} />
+            <Route path='/setari' element={<SetariPage/>} />
+            <Route path='/asistenta' element={<AsistentaPage/>} />
+            <Route path='/autentificare' element={<AutentificarePage/>} />
           </Routes>
-        </div>
+        </main>
         
-        <Footer />
+        <aside className='app-sidebar'>
+          {events_mobile_MenuActive && (
+            <aside>
+              <SidebarHamburgerMenu events_mobile_MenuActive={events_mobile_MenuActive} />
+            </aside>
+            )}
+          {profile_mobile_DropdownMenuActive && (
+            <aside>
+              <SidebarProfile profile_mobile_DropdownMenuActive={profile_mobile_DropdownMenuActive} />
+            </aside>
+          )}
+        </aside>
         
+
+        <footer className='app-footer'>
+          <Footer />
+        </footer>
       </Router>
     </div>
   );

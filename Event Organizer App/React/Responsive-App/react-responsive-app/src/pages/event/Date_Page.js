@@ -4,6 +4,7 @@ import MOCK_DATA from '../../data/DatePage/MOCK_DATA.json';
 // import { COLUMNS } from './columns';
 import './Date_Page.css';
 import '../../App.css';
+import DarkMode from '../../DarkMode/DarkMode';
 
 export const DatePage = () => {
   // State variables
@@ -62,6 +63,7 @@ export const DatePage = () => {
   return (
     <div className="datePage-container">
       <div className="inputField-container">
+        <DarkMode/>
         <div className='inputField-overflow'>
           {/* Input fields for dates and maxParticipants */}
           <div className='inputField-item-number'>

@@ -1,36 +1,23 @@
-:root {
-    --primary-color: #FFFFFF;
-    --secondary-color: #a17cce;
-    --secondary-color-transparent: #ae8fd4f1;
-    --third-color: #6A0DAD;
-    --primary-text-color: #FFF;
-    --secondary-text-color: #000;
-    --navbar-height: 10cqh;
-    --footer-height: 3cqh;
-    --margins-top-bottom: 3.5cqh;
-    --margins-left-right: 0.5cqh;
-    --font-size-h1: 3.2cqh;
-    --font-size-h2: 2.2cqh;
-    --font-size-h3: 1.7cqh;
-}
+
 
 /* Cards-container */
 .cards-container {
-    container-type: inline-size;
+    
     display: flex;
-    position: absolute;  
+    position: relative;  
     width: 96cqi;  
     height: 80cqh;
     justify-content: flex-start; /* Add this line to space the child elements */
     top: var(--navbar-height);
     margin-inline: auto;
     margin-top: var(--margins-top-bottom);
+    background-color: var(--primary-color);
     gap: 5%;
 }
 
 /* Overview-card */
 .overview-card {
-    container-type: inline-size;
+    
     display: flex;
     position: relative;
     flex-direction: column;
@@ -57,7 +44,7 @@
     background: var(--secondary-color-transparent);
 }
 .overview-small-card-date {
-    container-type: inline-size;
+    
     display: inline-block;
     position: relative;
     width: 95%;
@@ -72,7 +59,7 @@
     background: var(--secondary-color-transparent);
 }
 .overview-small-card-maxnumber {
-    container-type: inline-size;
+    
     display: inline-block;
     position: relative;
     width: 95%;
@@ -86,7 +73,7 @@
     background: var(--secondary-color-transparent);
 }
 .overview-small-card {
-    container-type: inline-size;
+    
     display: inline-block;
     position: relative;
     width: 95%;
@@ -139,7 +126,7 @@
 
 /* Tutorial-card */
 .tutorial-card {
-    container-type: inline-size;
+    
     display: flex;
     position: relative;
     flex-direction: column;
@@ -154,7 +141,6 @@
     background: var(--secondary-color);
 }
 .tutorial-small-card-title {
-    /* container-type: inline-size; */
     display: inline-block;
     position: relative;
     width: 15%;

@@ -1,10 +1,4 @@
-:root {
-    --primary-color: #FFFFFF;
-    --secondary-color: #a17cce;
-    --third-color: #6A0DAD;
-    --primary-text-color: #FFF;
-    --secondary-text-color: #000;
-}
+
 
 .navBar-container { 
     container-type: inline-size;
@@ -98,7 +92,7 @@
 }
 
 .nav-event-item:hover {
-    background: var(--primary-color);
+    background: var(--third-color);
     color: var(--secondary-text-color);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
