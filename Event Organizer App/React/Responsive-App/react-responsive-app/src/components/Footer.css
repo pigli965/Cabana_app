@@ -1,0 +1,16 @@
+.footer-item{
+    display: flex;
+    container-type: inline-size;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    height: 3cqh;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background-color: #bfbfbf;
+    /* text-decoration-color: #fff; */
+    text-align: center;
+    z-index: 3;
+    font-size: 1cqi;
+  }

@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-bg: #242526;
+  --secondary-bg: #90d9d3;
+  --primary-text-color: #000000;
+  --secondary-text-color: #000000;
+  --cards-background-color: #dfdec9;
+  --border-radius: 8px;
+  --cards-border-radius: 30px;
+  --speed: 500ms;
+  --home-upper-card-height: 360px;
+  --home-upper-card-width: 550px;
+  --home-lower-card-height: 420px;
+  --home-lower-card-width: 330px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+}
+
+.side-bar{
+  width: 200px;
+  height: 92vh;
+  z-index: 2;
+  background-color: var(--secondary-bg);
+}
+
+.footer-item{
+  position: absolute;
+  height: var(--footer-space);
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #bfbfbf;
+  text-decoration-color: #fff;
+  text-align: center;
+  z-index: 3;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px; /* Adjust the padding as needed */
+}
+
+.side-bar ul li{
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.side-bar ul li:hover a{
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.side-barItem{
+  display: flex;
+  margin: -0.4px auto;
+}
+
+.side-barItem a{
+  max-width: 200px;
+  width: 200px;
+  margin-left: 10px;
+  padding: 5px;
+  font-weight: bold;
+  opacity: 0.8;
+  transition: var(--speed);
+}
+
+.header-bar{
+  background-color: var(--secondary-bg);
+}
+
+.header-app{
+  font-size: larger;
+  font-weight: bold;
+}
+
+.home-trigger a{
+  position: absolute;
+  top: 11px;
+  right: 230px;
+  font-size: large;
+  opacity: 0.8;
+}
+
+.home-trigger:hover a{
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.about-trigger a{
+  position: absolute;
+  top: 11px;
+  right: 150px;
+  font-size: large;
+  opacity: 0.8;
+}
+
+.about-trigger:hover a{
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.contact-trigger a{
+  position: absolute;
+  top: 11px;
+  right: 60px;
+  font-size: large;
+  opacity: 0.8;
+}
+
+.contact-trigger:hover a{
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.menu-trigger img{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 43px;
+  width: 43px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.dropdown-menu{
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  background-color: var(--secondary-bg);
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  width: 200px;
+}
+
+.dropdown-menu::before{
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 16px;
+  height: 20px;
+  width: 20px;
+  background: var(--secondary-bg);
+  transform: rotate(45deg);
+}
+
+.dropdown-menu.active{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: var(--speed) ease;
+}
+
+.dropdown-menu.inactive{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease;
+}
+
+h3{
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--primary-text-color);
+  line-height: 1.2rem;
+}
+
+h3 span{
+  font-size: 14px;
+  color: var(--secondary-text-color);
+  font-weight: 400;
+}
+
+.dropdown-menu ul li{
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu ul li:hover a{
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.dropdown-menu ul li:hover img{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.dropdownItem{
+  display: flex;
+  margin: 10px auto;
+}
+
+.dropdownItem img{
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.8;
+  transition: var(--speed);
+}
+
+.dropdownItem a{
+  max-width: 100px;
+  margin-left: 10px;
+  opacity: 0.8;
+  transition: var(--speed);
+}
+
+.home-container {
+  background-color: #ffffff;
+  width: 100%;
+  height: 92vh;
+  padding: 10px;
+}
+
+.upper-card-container,
+.lower-card-container {
+  display: flex;
+  width: 100%;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.upper-card {
+  width: var(--home-upper-card-width); /* Adjust the width of upper cards */
+  height: var(--home-upper-card-height);
+  /* Adjust the height of upper cards based on the available space */
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: 10px;
+  border-radius: var(--cards-border-radius);
+  transition: box-shadow 0.3s ease;
+  background-color: var(--cards-background-color);
+}
+
+.lower-card {
+  width: var(--home-lower-card-width); /* Adjust the width of lower cards */
+  height: var(--home-lower-card-height);
+  /* Adjust the height of lower cards based on the available space */
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: 10px;
+  border-radius: var(--cards-border-radius);
+  transition: box-shadow 0.3s ease;
+  background-color: var(--cards-background-color);
+}
+
+.upper-card:hover,
+.lower-card:hover {
+  box-shadow: 0 0 15px rgba(1, 253, 245, 0.8);
+}
+
+.upper-card-title {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.lower-card-title {
+  font-size: 2.7em;
+  margin-bottom: 10px;
+}
+
+.upper-card-image {
+  width: 50%; /* Set the image width to 60% of the container */
+  height: auto; /* Maintain the aspect ratio of the image */
+  max-height: 300px; /* Set a maximum height if needed */
+  object-fit: cover; /* Ensure the image covers the entire container */
+  margin-bottom: 0; /* Add margin to the bottom */
+  margin-top: 0px;
+  margin-left: 135px;
+}
+
+.lower-card-image {
+  width: 90%; /* Set the image width to 60% of the container */
+  height: auto; /* Maintain the aspect ratio of the image */
+  max-height: 300px; /* Set a maximum height if needed */
+  object-fit: cover; /* Ensure the image covers the entire container */
+  margin-bottom: 0; /* Add margin to the bottom */
+  margin-top: 50px;
+  margin-left: 17px;
+}
