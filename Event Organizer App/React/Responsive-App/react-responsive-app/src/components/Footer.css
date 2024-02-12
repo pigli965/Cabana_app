@@ -12,5 +12,5 @@
     /* text-decoration-color: #fff; */
     text-align: center;
     z-index: 3;
-    font-size: 1cqi;
+    font-size: clamp(.75rem, 1.2svw, 2rem);
   }

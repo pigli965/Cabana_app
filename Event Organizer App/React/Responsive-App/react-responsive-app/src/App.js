@@ -18,21 +18,22 @@ import { Navbar1, Navbar2, Navbar3 } from './components/Navbar2';
 import { SidebarHamburgerMenu , SidebarProfile  } from './components/Sidebars_Mobile_Menus';
 import { HomePage } from './pages/event/HomePage';
 import { Footer } from './components/Footer';
+import { NotificationBox } from './components/NotificationBox';
 
 function App() {
+  const [isSuccesful, setIsSuccesful] = useState(false);
+  const [isDateValueAdded, setIsDateValueAdded] = useState(false);
 
+//#region Navigation Bar and their Menu Status variables 
   const [navBar2000, setNavBar2000] = useState(false);
   const [navBar1500, setNavBar1500] = useState(false);
   const [navBar1100, setNavBar1100] = useState(false);
 
   const [profile_DropdownMenuActive, setProfile_DropdownMenuActive] = useState(false)
-
   const [events_mobile_MenuActive, setEvents_mobile_MenuActive] = useState(false);
   const [profile_mobile_DropdownMenuActive, setProfile_mobile_DropdownMenuActive] = useState(false);
-
   const [profile_MediumResolutionDropdownMenuActive, setProfile_MediumResolutionDropdownMenuActive] = useState(false);
   const [events_MediumResolutionDropdownMenuActive, setEvents_MediumResolutionDropdownMenuActive] = useState(false);
-
   // Define close functions within the component scope
   const closeMaximumResolutioneMenus = useCallback(() => {
     setProfile_DropdownMenuActive(false);
@@ -85,7 +86,7 @@ function App() {
       window.removeEventListener('resize', memoizedShowNavBar);
     };
   }, [memoizedShowNavBar]);
-
+//#endregion
 //#region Maximum Resolution Profile Dropdown Menu 
   const triggerDropdownMenu = () => {
       setProfile_DropdownMenuActive(!profile_DropdownMenuActive);
@@ -143,10 +144,10 @@ function App() {
           
           <Routes>
             {/* Home Page */}
-            <Route path='/home' exact element={<HomePage />}/>
+            <Route path='/' exact element={<HomePage />}/>
 
             {/* Event Pages */}
-            <Route path='/alege-data' element={<DatePage />} />
+            <Route path='/alege-data' element={<DatePage isSuccesful={isSuccesful} setIsSuccesful={setIsSuccesful} setIsDateValueAdded={setIsDateValueAdded}/>} />
             <Route path='/participanti' element={<ParticipantiPage/>} />
             <Route path='/finante' element={<FinantePage/>} />
             <Route path='/locatie' element={<LocatiePage/>} />
@@ -176,6 +177,12 @@ function App() {
           )}
         </aside>
         
+        <div className='app-notification'>
+            <NotificationBox 
+              isSuccesful={isSuccesful} 
+              isDateValueAdded={isDateValueAdded}
+            />
+        </div>
 
         <footer className='app-footer'>
           <Footer />

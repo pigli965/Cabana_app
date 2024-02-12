@@ -1,12 +1,26 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useTable } from 'react-table';
 import MOCK_DATA from '../../data/DatePage/MOCK_DATA.json';
 // import { COLUMNS } from './columns';
 import './Date_Page.css';
 import '../../App.css';
-import DarkMode from '../../DarkMode/DarkMode';
 
-export const DatePage = () => {
+const formatDate = (inputDate, isFormatted) => {
+  const selectedDate = new Date(inputDate);
+
+  if (isFormatted) {
+    return `${selectedDate.getDate()}-${getMonthAbbreviation(selectedDate.getMonth())}-${selectedDate.getFullYear()}`;
+  } else {
+    return `${selectedDate.getFullYear()}-${(selectedDate.getMonth() + 1).toString().padStart(2, '0')}-${selectedDate.getDate().toString().padStart(2, '0')}`;
+  }
+};
+
+const getMonthAbbreviation = (monthIndex) => {
+  const monthsAbbreviation = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return monthsAbbreviation[monthIndex];
+};
+
+export const DatePage = ({ isSuccesful, setIsSuccesful, setIsDateValueAdded }) => {
   // State variables
   const [dates, setDates] = useState([]); // Array to store date values
   const [maxParticipants, setMaxParticipants] = useState(0);
@@ -17,34 +31,17 @@ export const DatePage = () => {
   };
 
   // Function to handle date input changes
-  // const handleDateChange = (index, value) => {
-  //   const newDates = [...dates];
-  //   newDates[index] = value;
-  //   setDates(newDates);
-  // };
   const handleDateChange = (index, value) => {
     // Assuming the input value is in the format "yyyy-MM-dd"
     const selectedDate = new Date(value);
   
     // Format the date as "dd-Mon-yyyy"
     const formattedDate = `${selectedDate.getDate()}-${getMonthAbbreviation(selectedDate.getMonth())}-${selectedDate.getFullYear()}`;
-  
+
     // Use the formatted date in your state
     const newDates = [...dates];
     newDates[index] = formattedDate;
     setDates(newDates);
-  };
-  
-  // Function to get the three-letter abbreviation of a month
-  const getMonthAbbreviation = (monthIndex) => {
-    const monthsAbbreviation = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    return monthsAbbreviation[monthIndex];
-  };
-
-  // Function to format a date as "dd-Mon-yyyy"
-  const formatDate = (inputDate) => {
-    const selectedDate = new Date(inputDate);
-    return `${selectedDate.getDate()}-${getMonthAbbreviation(selectedDate.getMonth())}-${selectedDate.getFullYear()}`;
   };
 
   // Function to remove a date input
@@ -60,15 +57,37 @@ export const DatePage = () => {
     setDates(newDates);
   }
 
+  // Memoized value to determine isSuccesful
+  const memoizedIsSuccesful = useMemo(() => {
+    return maxParticipants > 0;
+  }, [maxParticipants]);
+
+  // Use useEffect to update isSuccesful after the component has rendered
+  useEffect(() => {
+    setIsSuccesful(memoizedIsSuccesful);
+  }, [memoizedIsSuccesful, setIsSuccesful]);
+
+  const handleAddDateNotificationSuccess = () => {
+    setIsDateValueAdded(true);
+
+    setTimeout(() => {
+      setIsDateValueAdded(false);
+    }, 4000);
+  };
+
   return (
     <div className="datePage-container">
       <div className="inputField-container">
-        <DarkMode/>
         <div className='inputField-overflow'>
           {/* Input fields for dates and maxParticipants */}
           <div className='inputField-item-number'>
             <label className='Max-Participants'>Nr. maxim participati: </label>
-            <input className='inputField-maxNumber' type="number" value={maxParticipants} onChange={handleMaxParticipantsChange} />
+            <input 
+              className='inputField-maxNumber' 
+              type="number" 
+              value={maxParticipants} 
+              onChange={handleMaxParticipantsChange} 
+            />
           </div>
           <button className='Add-button' onClick={addDateInput}>Adauga Data</button>
           {dates.map((date, index) => (
@@ -76,7 +95,12 @@ export const DatePage = () => {
               <label className='dateLabel'>
                 Data {index + 1}: 
               </label>
-              <input className='inputField-date' type="date" value={date ? formatDate(date) : ''} onChange={(e) => handleDateChange(index, e.target.value)} />
+              <input 
+                className='inputField-date' 
+                type="date" 
+                value={date ? formatDate(date) : ''} 
+                onChange={(e) => {handleDateChange(index, e.target.value); handleAddDateNotificationSuccess(true)}} 
+              />
               <button className='Remove-button' onClick={() => removeDateInput(index)}>Sterge Data</button>
             </div>
           ))}
@@ -85,96 +109,64 @@ export const DatePage = () => {
 
       <div className="table-container">
         <div className='table-item'>
-          {/* Table */}
-          <DateTable />
-          {/* {maxParticipants > 0 && (
-            <table>
-              <thead>
-                <tr>
-                  {dates.map((date, index) => (
-                    <th key={index}>{date}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {Array.from({ length: maxParticipants }, (_, rowIndex) => (
-                  <tr key={rowIndex}>
-                    {dates.map((date, colIndex) => (
-                      <td key={colIndex}></td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )} */}
+          {/* Table */}         
+          {isSuccesful && maxParticipants > 0 && (
+            <DateTable dates={dates} maxParticipants={maxParticipants} />
+          )} 
         </div>
       </div>
     </div>
   )
 }
 
-export const DateTable = () => {
-
-  const columns = useMemo(() => DateCOLUMNS, [])
-  const data = useMemo(() => MOCK_DATA, [])
+export const DateTable = ({ dates, maxParticipants }) => {
+  const columns = useMemo(() => getColumns(dates), [dates]);
+  const data = useMemo(() => MOCK_DATA.slice(0, maxParticipants), [maxParticipants]);
 
   const tableInstance = useTable({
-      columns,
-      data
-  })
+    columns,
+    data,
+  });
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow,} = tableInstance
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
 
   return (
-      <table {...getTableProps()}>
-          <thead> 
-              {headerGroups.map((headerGroups) => (
-                  <tr {...headerGroups.getHeaderGroupProps()}>
-                      {headerGroups.headers.map((column) => (
-                              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-                          ))}
-                  </tr>
-              ))}  
-          </thead>
-          <tbody {...getTableBodyProps()}>
-              {rows.map(row => {
-                  prepareRow(row)
-                  return (
-                      <tr {...row.getRowProps()}>
-                          {row.cells.map((cell) => {
-                              return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-                          })}   
-                      </tr>
-                  )
-              })}       
-          </tbody>
-      </table>
-  )
-}
+    <table {...getTableProps()}>
+      <thead>
+        {headerGroups.map((headerGroup) => (
+          <tr {...headerGroup.getHeaderGroupProps()} key="header">
+            {headerGroup.headers.map((column, columnIndex) => (
+              <th {...column.getHeaderProps()} key={columnIndex}>
+                {column.render('Header')}
+              </th>
+            ))}
+          </tr>
+        ))}
+      </thead>
+      <tbody {...getTableBodyProps()}>
+        {rows.map((row, rowIndex) => {
+          prepareRow(row);
+          return (
+            <tr {...row.getRowProps()} key={rowIndex}>
+              {row.cells.map((cell, cellIndex) => (
+                <td {...cell.getCellProps()} key={cellIndex}>
+                  {cell.render('Cell')}
+                </td>
+              ))}
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  );
+};
 
-export const DateCOLUMNS = [
-  {
-      Header: 'Data 1',
-      accessor: 'participant_data1'
-  },
+const getColumns = (dates) => {
+  // Create an array of objects with appropriate accessors
+  const columns = dates.map((date, index) => ({
+    Header: date ? formatDate(date, true) : `Data ${index + 1}`,
+    accessor: `participant_data${index + 1}`,
+  }));
 
-  {
-      Header: 'Data 2',
-      accessor: 'participant_data2'
-  },
-
-  {
-      Header: 'Data 3',
-      accessor: 'participant_data3'
-  },
-
-  {
-      Header: 'Data 4',
-      accessor: 'participant_data4'
-  },
-
-  {
-      Header: 'Data 5',
-      accessor: 'participant_data5'
-  }
-]
+  return columns;
+};

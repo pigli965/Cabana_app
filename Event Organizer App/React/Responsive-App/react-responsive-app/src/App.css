@@ -8,12 +8,21 @@
 body {
   background: var(--body_background);
   color: var(--body_color);
+  /* font-size: clamp(.75rem, 1.5svw, 2rem); */
 }
 
 :root {
 
   --body_background: #EAF2DA;
   --body_color: #1A2602;
+
+  --background-color: #EAF2DA;
+  --content-color: #71A608;
+  --action-color: #A3D936;
+
+  --alert-color: red;
+  --validation-color: rgb(3, 224, 3);
+  --information-color: blue;
 
   --primary-color: #BEF255;
   --secondary-color: #71A608;
@@ -22,16 +31,14 @@ body {
   --primary-text-color: #1A2602;
   --secondary-text-color: #E2F2C2;
   --table-color: #fff;
-  --card-color: transparent;
-  --navbar-height: 10cqh;
-  --footer-height: 3cqh;
-  --navbar-height: 10cqh;
-  --footer-height: 3cqh;
-  --margins-top-bottom: 3.5cqh;
-  --margins-left-right: 0.5cqh;
-  --font-size-h1: 3.2cqh;
-  --font-size-h2: 2.5cqh;
-  --font-size-h3: 1.7cqh;
+  --card-color: #71A608;
+  --navbar-height: 10svh;
+  --footer-height: 3svh;
+  --margins-top-bottom: 3.5svh;
+  --margins-left-right: 0.5svw;
+  --font-size-h1: clamp(.5rem, 1.1svw, 1.5rem);
+  --font-size-h2: clamp(.4rem, 1svw, 1.4rem);
+  --font-size-h3: clamp(.3rem, 0.9svw, 1.3rem);
   --font-family: font-family: 'PT Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
 }
 
@@ -47,32 +54,40 @@ body {
 
 .app-container {
   display: grid;
-  height: 100dvh;
-  width: 100dvw;
-  grid-template-rows: 10% 1fr 3%;
+  height: 100svh;
+  width: 100svw;
+  grid-template-rows: 10svh 77svh 10svh 3svh;
   grid-template-columns: 1fr;
-  height: 100%;
+
 }
  
 .app-header {
   grid-row: 1;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
 }
 
 .app-content {
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 2fr ;
-  height: 100%;
-  /* font-size: 3rem; */
-  /* margin-inline: auto; */
-}
-
-.app-sidebar {
   grid-row: 2;
 }
 
-.app-footer {
+.app-sidebar {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.app-notification {
   grid-row: 3;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+.app-footer {
+  grid-row: 4;
 }
 
   .show-navBar2000 {

@@ -1,12 +1,12 @@
 import React from 'react'
-import { BasicTable } from '../../components/BasicTable'
+import DarkMode from '../../DarkMode/DarkMode'
 // import { BasicTables } from '../../components/BasicTables'
 
 export const FinantePage = () => {
   return (
     <div>
       {/* Pagina: Finante */}
-      <BasicTable />
+      <DarkMode />
       {/* <BasicTables /> */}
     </div>
   )

@@ -1,88 +1,119 @@
-
-
 /* Cards-container */
 .cards-container {
-    
     display: flex;
-    position: relative;  
-    width: 96cqi;  
-    height: 80cqh;
-    justify-content: flex-start; /* Add this line to space the child elements */
-    top: var(--navbar-height);
-    margin-inline: auto;
-    margin-top: var(--margins-top-bottom);
-    background-color: var(--primary-color);
+    flex-direction: row;   
+    width: 96%;  
+    height: 90%;
     gap: 5%;
+    margin-inline: auto;
+    margin-left: 2%;
+    margin-top: var(--margins-top-bottom);
 }
 
 /* Overview-card */
 .overview-card {
-    
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr repeat(6, auto);
+    grid-template-columns: 1fr;
     position: relative;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
-    width: 25%;
-    height: 100%;
-    padding: 0.5%;
-    border: 1px solid hsl(0, 0%, 80%);
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
-    background: var(--secondary-color);
+    width: 30%;
+    align-items: center;
+    row-gap: 1%;
+    overflow-y: auto;
 }
+
 .overview-small-card-title {
+    grid-row-start: 2;
+    grid-row-end: 2;
     display: inline-block;
-    position: relative;
-    width: 65%;
-    height: 6%;
+    width: 45%;
     margin-inline: auto;
     text-align: center;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
-    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
     background: var(--secondary-color-transparent);
 }
 .overview-small-card-date {
-    
+    grid-row-start: 3;
+    grid-row-end: 3;
     display: inline-block;
-    position: relative;
-    width: 95%;
-    height: 4.5%;
+    width: 99%;
     margin-inline: auto;
     margin-top: 3%;
-    margin-bottom: 2%;
     text-align: center;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
-    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
     background: var(--secondary-color-transparent);
 }
 .overview-small-card-maxnumber {
-    
+    grid-row-start: 4;
+    grid-row-end: 4;
     display: inline-block;
     position: relative;
-    width: 95%;
-    height: 4.5%;
+    width: 99%;
     margin-inline: auto;
-    margin-bottom: 2%;
     text-align: center;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
-    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
     background: var(--secondary-color-transparent);
 }
-.overview-small-card {
-    
+.overview-small-card-locatie {
+    grid-row-start: 5;
+    grid-row-end: 5;
     display: inline-block;
     position: relative;
-    width: 95%;
+    width: 99%;
     margin-inline: auto;
-    margin-bottom: 2%;
     align-items: center;
+    padding: 0% 5%;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
-    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    background: var(--secondary-color-transparent);
+}
+.overview-small-card-transport {
+    grid-row-start: 6;
+    grid-row-end: 6;
+    display: inline-block;
+    position: relative;
+    width: 99%;
+    margin-inline: auto;
+    align-items: center;
+    padding: 0% 5%;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    background: var(--secondary-color-transparent);
+}
+.overview-small-card-catering {
+    grid-row-start: 7;
+    grid-row-end: 7;
+    display: inline-block;
+    position: relative;
+    width: 99%;
+    margin-inline: auto;
+    align-items: center;
+    padding: 0% 5%;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    background: var(--secondary-color-transparent);
+}
+.overview-small-card-activitati {
+    grid-row-start: 8;
+    grid-row-end: 8;
+    display: inline-block;
+    position: relative;
+    width: 99%;
+    margin-inline: auto;
+    align-items: center;
+    padding: 0% 5%;
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
     background: var(--secondary-color-transparent);
 }
 
@@ -90,7 +121,6 @@
 .overview-small-card-title .overview-card-title {
     color: var(--primary-text-color);
     font-size: var(--font-size-h1);
-    padding: 0% 5%;
 }
 .overview-small-card-date .overview-card-date-title,
 .overview-small-card-maxnumber .overview-card-numar-title {
@@ -104,7 +134,6 @@
 .overview-small-card .overview-card-catering-title,
 .overview-small-card .overview-card-activitati-title {
     text-align: start;
-    padding: 1% 5%;
     font-size: var(--font-size-h2);
     color: var(--primary-text-color);
 }
@@ -119,89 +148,61 @@
     padding: 1% 5%;
     font-size: var(--font-size-h3);
     color: var(--primary-text-color);
-    overflow: hidden; /* Add this line to hide overflow */
-    white-space: nowrap; /* Optional: Prevent text from wrapping */
-    text-overflow: ellipsis; /* Optional: Show ellipsis for overflowed text */
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
 }
 
 /* Tutorial-card */
 .tutorial-card {
-    
-    display: flex;
+    display: grid;
+    /* grid-template-rows: 5svh 71svh 6svh; */
+    grid-template-rows: 1fr repeat(2, auto);
+    grid-template-columns: 1fr;
     position: relative;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: center;
+    row-gap: 1%;
     width: 70%;
-    height: 100%;
-    padding: 0.5%;
+    margin-inline: auto;
+    /* height: 100%; */
+    /* align-items: center; */
+    /* padding: 0.5%; */
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); 
     background: var(--secondary-color);
 }
 .tutorial-small-card-title {
+    grid-row-start: 2;
+    grid-row-end: 2;
     display: inline-block;
-    position: relative;
-    width: 15%;
-    height: 6%;
+    width: 45%;
+    /* height: 6%; */
     margin-inline: auto;
-    margin-bottom: 1%;
+    /* margin-bottom: 1%; */
+    text-align: center;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
-    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); 
     background: var(--secondary-color-transparent);
 }
 .tutorial-small-card-video {
-    display: inline-block;
-    position: relative;
-    width: 95%;
-    height: 80%;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    /* display: inline-block; */
+    /* justify-self: flex-start; */
+    width: 85%;
+    height: 75%;
     margin-inline: auto;
-    margin-bottom: 2%;
+    text-align: center;
+    /* text-align: center; */
+    /* align-items: center; */
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
-    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); 
     background: var(--secondary-color-transparent);
-}
-.tutorial-small-card-pages {
-    display: inline-flex;
-    position: relative;
-    margin-inline: auto;
-    margin-bottom: 1%;
-    border: 1px solid hsl(0, 0%, 80%);
-    border-radius: 10px;
-    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
-    background: var(--secondary-color-transparent);
-}
-.tutorial-small-card-title .tutorial-card-title {
-    color: var(--primary-text-color);
-    font-size: var(--font-size-h1);
-    padding: 0% 5%;
-}
-.tutorial-small-card-pages .tutorial-card-button-pages {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
-    padding: 1% 0%;
-    background: transparent;
-    border: 0px solid hsl(0, 0%, 80%);
-    border-radius: 0px;
-    box-shadow: 0px 0px 0px hsl(0, 0%, 0%, 0.1); 
-}
-.homepage-tutorial-button {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 2px;
-    background: transparent;
-    border: 0px solid hsl(0, 0%, 80%);
-    border-radius: 0px;
-    box-shadow: 0px 0px 0px hsl(0, 0%, 0%, 0.1);
 }
 
-.tutorial-card .tutorial-small-card-video video {
+.tutorial-small-card-video video {
     /* display: block;
     align-items: center;
     position: relative;
@@ -219,6 +220,87 @@
     /* margin-top: 0.5%; */
     object-fit: fill;
 }
+
+/* .navbar-logo img {
+    width: 13svw;
+    height: 10svh;
+    display: block; 
+    margin: 0 auto; 
+}
+.navbar-logo {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    background: transparent;
+} */
+
+.tutorial-small-card-pages {
+    grid-row-start: 4;
+    grid-row-end: 4;
+    width: 26%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin-inline: auto;
+    text-align: center;
+    margin-bottom: 1%;
+    /* border: 1px solid hsl(0, 0%, 80%); */
+    border-radius: 10px;
+    /* box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);  */
+    background: var(--primary-color);
+}
+.tutorial-card-title {
+    color: var(--primary-text-color);
+    font-size: var(--font-size-h1);
+    padding: 1% 0%;
+}
+.tutorial-card-button-pages {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 30%;
+    height: 10%;
+    align-items: center;
+    /* position: relative; */
+    padding: 1% 0%;
+    background: var(--primary-color);
+    border: 0px solid hsl(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 0px hsl(0, 0%, 0%, 0.1); 
+}
+.homepage-tutorial-button {
+    display: inline-flex;
+    /* text-align: start;
+    align-items: center; */
+    /* text-align: center; */
+    /* position: relative; */
+    /* padding: 2px; */
+    background: transparent;
+    border: 0px solid hsl(0, 0%, 80%);
+    border-radius: 0px;
+    box-shadow: 0px 0px 0px hsl(0, 0%, 0%, 0.1);
+}
+.homepage-tutorial-button img {
+    /* width: 2svw;
+    height: 4svh; */
+    height: 100%;
+    width: 100%;
+    display: block; 
+    margin: 0 auto; 
+}
+.navbar-logo {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    background: transparent;
+}
+
+
 
 /* New Small Tablets - Portrait Mode  */
 @container and (max-width: 1100px) and (max-height: 1400px) {
@@ -269,14 +351,213 @@
 }
 
 /* New Mobile Phones - Portrait Mode  */
-@container and (max-width: 500px) and (max-height: 1000px) {
-    .nav-mobile-event-item {
-        font-size: 4dvw;
-        padding: 1.5dvh 3dvw;
+@media screen and (max-width: 500px) and (max-height: 1000px) {
+    /* Cards-container */
+    .cards-container {
+        display: flex;
+        flex-direction: column;
+        width: 96%;  
+        height: 90%;
+        gap: 5%;
+        margin-inline: auto;
+        margin-left: 2%;
+        margin-top: var(--margins-top-bottom);
     }
-    .nav-mobile-profile-item {
-        font-size: 4dvw;
-        padding: 1.5dvh 3dvw;
+    /* Overview-card */
+    .overview-card {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;
+        width: 100%;
+        height: 50%;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+        overflow-y: auto;
+    }
+    .overview-small-card-title {
+        display: inline-block;
+        position: relative;
+        width: 65%;
+        height: 6%;
+        margin-inline: auto;
+        text-align: center;
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+        background: var(--secondary-color-transparent);
+    }
+    .overview-small-card-date {
+        
+        display: inline-block;
+        position: relative;
+        width: 95%;
+        height: 4.5%;
+        margin-inline: auto;
+        margin-top: 3%;
+        margin-bottom: 2%;
+        text-align: center;
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+        background: var(--secondary-color-transparent);
+    }
+    .overview-small-card-maxnumber {
+        
+        display: inline-block;
+        position: relative;
+        width: 95%;
+        height: 4.5%;
+        margin-inline: auto;
+        margin-bottom: 2%;
+        text-align: center;
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+        background: var(--secondary-color-transparent);
+    }
+    .overview-small-card {
+        
+        display: inline-block;
+        position: relative;
+        width: 95%;
+        margin-inline: auto;
+        margin-bottom: 2%;
+        align-items: center;
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+        background: var(--secondary-color-transparent);
+    }
+    /* Overview-card-titles */
+    .overview-small-card-title .overview-card-title {
+        color: var(--primary-text-color);
+        font-size: var(--font-size-h1);
+        padding: 0% 5%;
+    }
+    .overview-small-card-date .overview-card-date-title,
+    .overview-small-card-maxnumber .overview-card-numar-title {
+        text-align: start;
+        padding: 1% 5%;
+        font-size: var(--font-size-h2);
+        color: var(--primary-text-color);
+    }
+    .overview-small-card .overview-card-locatie-title,
+    .overview-small-card .overview-card-transport-title,
+    .overview-small-card .overview-card-catering-title,
+    .overview-small-card .overview-card-activitati-title {
+        text-align: start;
+        padding: 1% 5%;
+        font-size: var(--font-size-h2);
+        color: var(--primary-text-color);
+    }
+    /* Overview-card-Items */
+    .overview-small-card .overview-card-locatie-item,
+    .overview-small-card .overview-card-transport-item,
+    .overview-small-card .overview-card-catering-item,
+    .overview-small-card .overview-card-activitati-item {
+        text-align: start;
+        margin-top: 1%;
+        padding: 1% 5%;
+        font-size: var(--font-size-h3);
+        color: var(--primary-text-color);
+        overflow: hidden; /* Add this line to hide overflow */
+        white-space: nowrap; /* Optional: Prevent text from wrapping */
+        text-overflow: ellipsis; /* Optional: Show ellipsis for overflowed text */
+    }
+    /* Tutorial-card */
+    .tutorial-card {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: center;
+        width: 100%;
+        height: 50%;
+        padding: 0.5%;
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); 
+        background: var(--secondary-color);
+    }
+    .tutorial-small-card-title {
+        display: inline-block;
+        position: relative;
+        width: 15%;
+        height: 6%;
+        margin-inline: auto;
+        margin-bottom: 1%;
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+        background: var(--secondary-color-transparent);
+    }
+    .tutorial-small-card-video {
+        display: inline-block;
+        position: relative;
+        width: 95%;
+        height: 80%;
+        margin-inline: auto;
+        margin-bottom: 2%;
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+        background: var(--secondary-color-transparent);
+    }
+    .tutorial-small-card-pages {
+        display: inline-flex;
+        position: relative;
+        margin-inline: auto;
+        margin-bottom: 1%;
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); /* box-shadow: horizontal offset, vertical offset, blur radius, color; */
+        background: var(--primary-color);
+    }
+    .tutorial-small-card-title .tutorial-card-title {
+        color: var(--primary-text-color);
+        font-size: var(--font-size-h1);
+        padding: 0% 5%;
+    }
+    .tutorial-small-card-pages .tutorial-card-button-pages {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        padding: 1% 0%;
+        background: transparent;
+        border: 0px solid hsl(0, 0%, 80%);
+        border-radius: 0px;
+        box-shadow: 0px 0px 0px hsl(0, 0%, 0%, 0.1); 
+    }
+    .homepage-tutorial-button {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 2px;
+        background: transparent;
+        border: 0px solid hsl(0, 0%, 80%);
+        border-radius: 0px;
+        box-shadow: 0px 0px 0px hsl(0, 0%, 0%, 0.1);
+    }
+    .tutorial-card .tutorial-small-card-video video {
+        /* display: block;
+        align-items: center;
+        position: relative;
+        height: 95%;
+        width: 97%;
+        margin-inline: auto;
+        margin: auto;
+        top: 2.5%;
+        object-fit: fill; */
+        display: inline-block;
+        width: 98%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 100%;
+        /* margin-top: 0.5%; */
+        object-fit: fill;
     }
 }
 

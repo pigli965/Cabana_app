@@ -16,7 +16,7 @@ export const Navbar1 = ({triggerDropdownMenu, profile_DropdownMenuActive}) => {
     
     return (
         <nav className='navBar-container'>
-            <Link to='/home' className='navbar-logo' 
+            <Link to='/' className='navbar-logo' 
                 onMouseEnter={() => setIsLogoHover(true)}
                 onMouseLeave={() => setIsLogoHover(false)} 
             >
@@ -26,7 +26,7 @@ export const Navbar1 = ({triggerDropdownMenu, profile_DropdownMenuActive}) => {
                     <img src={white_logoImage} alt='white_logoImage'></img>
                 )}              
             </Link>
-            <ul className='navbar-eventList'>
+            <ul className='navbar-eventList2000px'>
                 <Link to='/alege-data' className='nav-event-item' >Alege Data</Link>
                 <Link to='/participanti' className='nav-event-item' >Participanti</Link>
                 <Link to='/finante' className='nav-event-item' >Finante</Link>
@@ -69,7 +69,7 @@ export const Navbar2 = ({
 
     return (
         <nav className='navBar-container'>
-            <Link to='/home' className='navbar-logo' 
+            <Link to='/' className='navbar-logo' 
                 onMouseEnter={() => setIsLogoHover(true)}
                 onMouseLeave={() => setIsLogoHover(false)} 
             >
@@ -79,7 +79,7 @@ export const Navbar2 = ({
                     <img src={white_logoImage} alt='white_logoImage'></img>
                 )}              
             </Link>
-            <ul className='navbar-eventList'>
+            <ul className='navbar-eventList1500px'>
                 <Link to='/alege-data' className='nav-event-item' >Alege Data</Link>
                 <Link to='/participanti' className='nav-event-item' >Participanti</Link>
                 <Link to='/finante' className='nav-event-item' >Finante</Link>
@@ -126,7 +126,7 @@ export const Navbar3 = ({ triggerMobileEventsMenu, triggerMobileProfileDropdownM
                 <img src={white_hamburgerMenu} alt='white_hamburgerMenu'></img>
             </div>
 
-            <Link to='/home' className='navbar-logo-mobile'>
+            <Link to='/' className='navbar-logo-mobile'>
                     <img src={white_mobile_logoImage} alt='white_mobile_logoImage'></img>       
             </Link>
 

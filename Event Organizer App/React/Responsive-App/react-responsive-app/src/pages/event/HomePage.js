@@ -61,37 +61,34 @@ export const HomePage = () => {
   return (
     <div className='cards-container'>
       <div className='overview-card'>
-
         <div className='overview-small-card-title'>
           <h2 className='overview-card-title'>Detalii Eveniment</h2>
         </div>       
-        
         <div className='overview-small-card-date'>
           <p className='overview-card-date-title'>Data Eveniment: 10-13 Jun:</p>
         </div>
         <div className='overview-small-card-maxnumber'>
           <p className='overview-card-numar-title'>Numar Participanti: 30</p>
-        </div>
-        
-        <div className='overview-small-card'>
+        </div> 
+        <div className='overview-small-card-locatie'>
           <h3 className='overview-card-locatie-title'>Locatie</h3>
           <p className='overview-card-locatie-item'>Nume</p>
           <p className='overview-card-locatie-item'>Website</p>
           <p className='overview-card-locatie-item'>Judet</p>
         </div>
-        <div className='overview-small-card'>
+        <div className='overview-small-card-transport'>
           <h3 className='overview-card-transport-title'>Transport</h3>
           <p className='overview-card-transport-item'>Centotrans</p>
           <p className='overview-card-transport-item'>Plecare: Piata Mihai Viteazul, 10 Jun, 07:00 - 07:30</p>
           <p className='overview-card-transport-item'>Sosire: Piata Mihai Viteazul, 13 Jun, 18:00 - 18:30</p>
         </div>
-        <div className='overview-small-card'>
+        <div className='overview-small-card-catering'>
           <h3 className='overview-card-catering-title'>Catering</h3>
           <p className='overview-card-catering-item'>Mic dejun: 09:00 - 11:00</p>
           <p className='overview-card-catering-item'>Pranz: 14:00 - 16:00</p>
           <p className='overview-card-catering-item'>Cina: 19:00 - 21:00</p>
         </div>
-        <div className='overview-small-card'>
+        <div className='overview-small-card-activitati'>
           <h3 className='overview-card-activitati-title'>Activitati</h3>
           <p className='overview-card-activitati-item'>Activitatea 1: 16:00 - 17:00</p>
           <p className='overview-card-activitati-item'>Activitatea 2: 17:00 - 18:00</p>
@@ -103,14 +100,8 @@ export const HomePage = () => {
         <div className='tutorial-small-card-title'>
           <h2 className='tutorial-card-title'>Tutorial</h2>
         </div>
-
-        {/*  video player here below */}
         <div className='tutorial-small-card-video'>
           <video src={currentVideoSource} controls controlsList="nodownload" />
-        </div>
-        {/*  video player here above */}
-
-        <div className='tutorial-small-card-pages'>
           <ul className='tutorial-card-button-pages'>
             {buttons.map((button, index) => (
               <button
@@ -126,7 +117,10 @@ export const HomePage = () => {
               </button>
             ))}
           </ul>
-        </div>       
+        </div>
+        {/* <div className='tutorial-small-card-pages'>
+          asd
+        </div>        */}
       </div>
     </div>
   )

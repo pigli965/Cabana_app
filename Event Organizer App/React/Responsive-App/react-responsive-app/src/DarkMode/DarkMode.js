@@ -6,10 +6,12 @@ import "./DarkMode.css";
 const DarkMode = () => {
 
     const setDarkMode = () => {
-        document.querySelector("body").setAttribute('data-theme', 'dark')
+        document.querySelector("body").setAttribute('data-theme', 'dark');
+        document.documentElement.style.setProperty('--table-color', '#1A2602'); // replace '#newDarkColor' with the desired dark color
     }
     const setLightMode = () => {
-        document.querySelector("body").setAttribute('data-theme', 'light')
+        document.querySelector("body").setAttribute('data-theme', 'light');
+        document.documentElement.style.setProperty('--table-color', '#fff'); // replace '#newLightColor' with the desired light color
     }
     
     const toggleTheme = (e) => {
@@ -25,7 +27,7 @@ const DarkMode = () => {
                 id='darkmode-toggle'
                 onChange={toggleTheme}
             />
-            <label className='dark_mode_label' for='darkmode-toggle'>
+            <label className='dark_mode_label' htmlFor='darkmode-toggle'>
                 <Sun />
                 <Moon />
             </label>

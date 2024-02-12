@@ -2,22 +2,19 @@
 
 /* datePage-container */
 .datePage-container {
-    /* container-type: inline-size; */
-    display: flex; 
-    width: 96cqi;  
-    height: 80cqh;
-    /* top: var(--navbar-height); */
-    /* justify-content: center; */
+    display: flex;
+    flex-direction: row;
+    width: 96%;  
+    height: 100%;
     gap: 5%;
     margin-inline: auto;
     margin-left: 2%;
-    margin-top: var(--margins-top-bottom);
-    /* border: 4px solid black; */
+    /* margin-top: var(--margins-top-bottom); */
+    margin-top: 2svh;
 }
 
 /* Style for the input container */
 .inputField-container {
-    container-type: inline-size;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -27,15 +24,10 @@
     height: 100%;
     gap: 2%;
     padding: 1.5% 0%;
-    /* border: 1px solid hsl(0, 0%, 80%); */
     border-radius: 10px;
-    /* box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); */
-    background: var(--card-color);
-    /* overflow-y: auto; */
 }
 
 .inputField-overflow {
-    container-type: inline-size;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -100,6 +92,7 @@
     font-size: 1dvw;
     font-family: var(--font-family);
     border-radius: 10px;
+    background: var(--secondary-text-color);
 }
 .inputField-maxNumber {
     width: 22%;
@@ -107,6 +100,7 @@
     font-size: 1dvw;
     font-family: var(--font-family);
     border-radius: 10px;
+    background: var(--secondary-text-color);
 }
 /* Style for buttons */
 .Add-button {
@@ -143,7 +137,6 @@
     text-align: center;
     width: calc(100% - 30% - 5%);
     height: 100%;
-    gap: 2%;
     padding: 1.5% 0%;
     /* border: 1px solid hsl(0, 0%, 80%); */
     border-radius: 10px;
@@ -186,17 +179,18 @@ th {
     min-width: calc(100% / 3);
     max-width: calc(100% / 3); */
     text-align: center;
-    font-size: 1.3vw;
+    font-size: clamp(.75rem, 1.5svw, 2rem);
     color: var(--primary-text-color);
-    border: 1px solid var(--primary-text-color);
-    background-color: var(--secondary-color);
+    border: 1px solid var(--body_color);
+    background-color: var(--primary-color);
 }
 
 /* Style for table rows */
 td {
     padding: 8px;
     text-align: start;
-    border: 1px solid var(--primary-text-color);
+    font-size: clamp(.75rem, 1.5svw, 2rem);
+    border: 1px solid var(--body_color);
     background-color: var(--table-color); 
 }
 
@@ -204,3 +198,178 @@ td {
 /* tr:nth-child(odd) {
     background-color: #f9f9f9;
 } */
+
+@media screen and (max-width: 500px) {
+    .datePage-container {
+        flex-direction: column;
+    }
+
+    .inputField-container {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;
+        width: 100%;
+        height: 50%;
+        gap: 2%;
+        padding: 1.5% 0%;
+        border-radius: 10px;
+    }
+    .inputField-overflow {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        gap: 2%;
+        padding: 1.5% 0%;
+        margin-inline: auto;
+        overflow-y: auto;
+    }
+    
+    .inputField-item-number{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 10%;
+        min-height: 10%;
+        gap: 2%;
+        margin-inline: auto;
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+        background: var(--secondary-color-transparent);
+    }
+    .inputField-item-date{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 10%;
+        min-height: 10%;
+        gap: 2%;
+        margin-inline: auto;
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+        background: var(--secondary-color-transparent);
+    }
+    /* Style for input labels */
+    .dateLabel {
+        color: var(--primary-text-color);
+        text-align: center;
+        font-size: clamp(.75rem, 1.5svw, 2rem);
+        font-family: var(--font-family);
+        margin-left: 5%;
+    }
+    .Max-Participants {
+        color: var(--primary-text-color);
+        text-align: center;
+        font-size: clamp(.75rem, 1.5svw, 2rem);
+        font-family: var(--font-family);
+        margin-left: 5%;
+    }
+    /* Style for input fields */
+    .inputField-date {
+        text-align: center;
+        font-size: clamp(.75rem, 1.5svw, 2rem);
+        font-family: var(--font-family);
+        border-radius: 10px;
+        background: var(--secondary-text-color);
+    }
+    .inputField-maxNumber {
+        width: 22%;
+        text-align: center;
+        font-size: clamp(.75rem, 1.5svw, 2rem);
+        font-family: var(--font-family);
+        border-radius: 10px;
+        background: var(--secondary-text-color);
+    }
+    /* Style for buttons */
+    .Add-button {
+        background: var(--third-color);
+        color: var(--primary-text-color);
+        width: 100%;
+        height: 10%;
+        min-height: 10%;
+        margin-inline: auto;
+        text-align: center;  /* Center text horizontally */
+        font-size: clamp(.75rem, 1.5svw, 2rem);
+        font-family: var(--font-family);
+        border-radius: 10px;
+    }
+    .Remove-button {
+        background: var(--third-color);
+        color: var(--primary-text-color);
+        width: 25%;
+        height: 70%;
+        margin-inline: auto;
+        text-align: center;  /* Center text horizontally */
+        font-size: clamp(.75rem, 1.5svw, 2rem);
+        font-family: var(--font-family);
+        border-radius: 7px;
+    }
+
+
+    .table-container {
+        container-type: inline-size;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: center;
+        width: 100%;
+        height: 50%;
+        padding: 1.5% 0%;
+        border-radius: 10px;
+        background: var(--card-color);
+    }
+
+    .table-item {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: 100%;
+        min-height: 100%;
+        margin-inline: auto;
+        border: 1px solid hsl(0, 0%, 80%);
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+        background: var(--secondary-color-transparent);
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+    
+    /* Style for the table */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        min-width: 100%;
+        min-height: 15%;
+        overflow-x: auto;        
+    }
+    
+    /* Style for table headers */
+    th {
+        text-align: center;
+        font-size: clamp(0.8rem, 1.5svw, 2rem);
+        color: var(--primary-text-color);
+        border: 1px solid var(--body_color);
+        background-color: var(--primary-color);
+    }
+    
+    /* Style for table rows */
+    td {
+        padding: 8px;
+        text-align: start;
+        font-size: clamp(.6rem, 1.5svw, 1.5rem);
+        border: 1px solid var(--body_color);
+        background-color: var(--table-color); 
+    }
+}
