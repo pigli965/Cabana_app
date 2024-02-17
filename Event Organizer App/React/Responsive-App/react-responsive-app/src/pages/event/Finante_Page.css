@@ -1,0 +1,167 @@
+.finante-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "input output";
+    column-gap: 5%;
+    width: 96%;
+    height: 92%;
+    margin-inline: auto;
+    margin: 2% auto;
+}
+
+.finante-input-container {
+    grid-area: input;
+    display: flex;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem;
+    gap: 5%;
+    border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 80%);
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    overflow-y: auto;
+}
+.finante-output-container {
+    grid-area: output;
+    background: black;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.finante-add-option {
+    width: 6rem;
+    height: 6rem;
+    background: var(--action-color);
+    border-radius: 10px;
+    color: var(--primary-text-color);
+    font-size: clamp(.5rem, 1.1svw, 1.5rem);;
+}
+
+.finante-input-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "1Row"
+    "2Row"
+    "3Row";
+    width: 40%;
+    height: 40%;
+    border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 80%);
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    color: var(--primary-text-color);
+    overflow-y: auto;
+}
+
+.finante-subGrid-firstRow {
+    grid-area: 1Row;
+    display: flex;
+    text-align: center;
+    place-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+    background: var(--primary-color);
+}
+.finante-subGrid-secondRow {
+    grid-area: 2Row;
+    display: flex;
+    text-align: center;
+    place-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 0px 0px 0 0;
+    border: 1px solid hsl(0, 0%, 80%);
+    background: white;
+}
+
+.finante-Optiune-index {
+    font-size: clamp(.5rem, 0.95svw, 1.4rem);
+}
+
+.finante-Nume-Locatie {
+    font-size: clamp(.5rem, 0.95svw, 1.4rem);
+}
+
+/* Tabel */
+.Categorii-tabel-wrapper {
+    grid-area: 3Row;
+    display: flex;
+    justify-content: center stretch;
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 0px 10px 10px;
+    background: white;
+}
+
+.finante-categorii-tabel {
+    width: 26%;
+    border-radius: 0px 0px 0px 10px;
+    background: var(--secondary-color-transparent);
+    overflow: hidden;
+}
+
+.finante-table-item {
+    flex: 1;
+    border-radius: 0px 0px 10px 0px;
+    background: var(--secondary-color-transparent);
+    overflow: hidden;
+}
+
+.finante-table {
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+
+/* Style for table headers */
+.finante-th {
+    text-align: start;
+    padding-left: 5%;
+    font-size: clamp(.5rem, 0.95svw, 1.4rem);
+    color: var(--primary-text-color);
+    border: 1px solid hsl(0, 0%, 80%);
+    background-color: var(--primary-color);
+}
+.finante-target-th {
+    text-align: start;
+    /* padding-left: 5%; */
+    font-size: clamp(.5rem, 0.95svw, 1.4rem);
+    color: var(--primary-text-color);
+    border: 1px solid hsl(0, 0%, 80%);
+    background-color: var(--primary-color);
+}
+
+/* Style for table rows */
+.finante-td {
+    width: 55%; /* Adjust the width as needed */
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    align-items: start;
+    text-align: start;
+    font-size: clamp(.5rem, 0.79svw, 1.4rem);
+    border: 1px solid hsl(0, 0%, 80%);
+    background-color: var(--table-color); 
+}
+
+.finante-target-td {
+    text-align: start;
+    font-size: clamp(.5rem, 0.79svw, 1.4rem);
+    border: 1px solid hsl(0, 0%, 80%);
+    background-color: var(--table-color); 
+}
+
+.finante-inputField-target {
+    width: 100%;
+    height: 100%;
+    padding-left: 6%;
+    color: var(--primary-text-color);
+}

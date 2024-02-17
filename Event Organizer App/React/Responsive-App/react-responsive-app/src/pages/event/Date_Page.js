@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useTable } from 'react-table';
-import MOCK_DATA from '../../data/DatePage/MOCK_DATA.json';
+import Date_Vote from '../../data/DatePage/Date_Vote.json';
 // import { COLUMNS } from './columns';
 import './Date_Page.css';
 import '../../App.css';
@@ -121,7 +121,7 @@ export const DatePage = ({ isSuccesful, setIsSuccesful, setIsDateValueAdded }) =
 
 export const DateTable = ({ dates, maxParticipants }) => {
   const columns = useMemo(() => getColumns(dates), [dates]);
-  const data = useMemo(() => MOCK_DATA.slice(0, maxParticipants), [maxParticipants]);
+  const data = useMemo(() => Date_Vote.slice(0, maxParticipants), [maxParticipants]);
 
   const tableInstance = useTable({
     columns,
@@ -131,12 +131,12 @@ export const DateTable = ({ dates, maxParticipants }) => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
 
   return (
-    <table {...getTableProps()}>
+    <table className='datePage-table' {...getTableProps()}>
       <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()} key="header">
             {headerGroup.headers.map((column, columnIndex) => (
-              <th {...column.getHeaderProps()} key={columnIndex}>
+              <th className='datePage-th' {...column.getHeaderProps()} key={columnIndex}>
                 {column.render('Header')}
               </th>
             ))}
@@ -149,7 +149,7 @@ export const DateTable = ({ dates, maxParticipants }) => {
           return (
             <tr {...row.getRowProps()} key={rowIndex}>
               {row.cells.map((cell, cellIndex) => (
-                <td {...cell.getCellProps()} key={cellIndex}>
+                <td className='datePage-td' {...cell.getCellProps()} key={cellIndex}>
                   {cell.render('Cell')}
                 </td>
               ))}

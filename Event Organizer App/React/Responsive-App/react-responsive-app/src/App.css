@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  min-width: 0;
   margin: 0;
   /* font-size: 1.5rem; */
   font-family: 'PT Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
@@ -18,13 +19,13 @@ body {
 
   --background-color: #EAF2DA;
   --content-color: #71A608;
-  --action-color: #A3D936;
+  --action-color: #BEF255;
 
   --alert-color: red;
   --validation-color: rgb(3, 224, 3);
   --information-color: blue;
 
-  --primary-color: #BEF255;
+  --primary-color: #A3D936;
   --secondary-color: #71A608;
   --secondary-color-transparent: #fff;
   --third-color: #A3D936;
@@ -56,17 +57,14 @@ body {
   display: grid;
   height: 100svh;
   width: 100svw;
-  grid-template-rows: 10svh 77svh 10svh 3svh;
+  grid-template-rows: 10svh 87svh 3svh;
   grid-template-columns: 1fr;
 
 }
  
 .app-header {
   grid-row: 1;
-  grid-column-start: 1;
-  grid-column-end: 1;
-  grid-row-start: 1;
-  grid-row-end: 1;
+  grid-column: 1;
 }
 
 .app-content {
@@ -74,11 +72,13 @@ body {
 }
 
 .app-sidebar {
+  grid-row: 2;
   grid-row-start: 2;
-  grid-row-end: 3;
+  grid-row-end: 2;
 }
 
 .app-notification {
+  display: none;
   grid-row: 3;
   grid-column-start: 1;
   grid-column-end: 1;
@@ -87,26 +87,26 @@ body {
 }
 
 .app-footer {
-  grid-row: 4;
+  grid-row: 3;
 }
 
-  .show-navBar2000 {
-    display: flex;
-  }
-  .hide-navBar2000 {
-    display: none;
-  }
+.show-navBar2000 {
+  display: flex;
+}
+.hide-navBar2000 {
+  display: none;
+}
 
-  .show-navBar1500 {
-    display: flex;
-  }
-  .hide-navBar1500 {
-    display: none;
-  }
+.show-navBar1500 {
+  display: flex;
+}
+.hide-navBar1500 {
+  display: none;
+}
 
-  .show-navBar1100 {
-    display: flex;
-  }
-  .hide-navBar1100 {
-    display: none;
-  }
+.show-navBar1100 {
+  display: flex;
+}
+.hide-navBar1100 {
+  display: none;
+}

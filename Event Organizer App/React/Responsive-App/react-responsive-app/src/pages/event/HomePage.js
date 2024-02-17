@@ -59,7 +59,7 @@ export const HomePage = () => {
   }, [handleArrowKey]);
 
   return (
-    <div className='cards-container'>
+    <main className='cards-container'>
       <div className='overview-card'>
         <div className='overview-small-card-title'>
           <h2 className='overview-card-title'>Detalii Eveniment</h2>
@@ -122,6 +122,6 @@ export const HomePage = () => {
           asd
         </div>        */}
       </div>
-    </div>
+    </main>
   )
 }

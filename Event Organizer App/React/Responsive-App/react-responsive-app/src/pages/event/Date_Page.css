@@ -163,7 +163,7 @@
 }
 
 /* Style for the table */
-table {
+.datePage-table {
     border-collapse: collapse;
     width: 100%;
     min-width: 100%;
@@ -173,7 +173,7 @@ table {
 }
 
 /* Style for table headers */
-th {
+.datePage-th {
     width: 300;
     /* width: calc(100% / 3);
     min-width: calc(100% / 3);
@@ -186,7 +186,7 @@ th {
 }
 
 /* Style for table rows */
-td {
+.datePage-td {
     padding: 8px;
     text-align: start;
     font-size: clamp(.75rem, 1.5svw, 2rem);
