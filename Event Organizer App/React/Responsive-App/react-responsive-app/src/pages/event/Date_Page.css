@@ -1,70 +1,61 @@
-
-
 /* datePage-container */
 .datePage-container {
-    display: flex;
-    flex-direction: row;
-    width: 96%;  
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "input output";
+    column-gap: 5%;
+    width: 96%;
     height: 100%;
-    gap: 5%;
     margin-inline: auto;
-    margin-left: 2%;
-    /* margin-top: var(--margins-top-bottom); */
-    margin-top: 2svh;
 }
 
 /* Style for the input container */
 .inputField-container {
-    display: flex;
+    grid-area: input;
     position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;
-    width: 30%;
+    width: 100%;
     height: 100%;
-    gap: 2%;
-    padding: 1.5% 0%;
+    padding: 1rem 1rem;
+    background: transparent;
     border-radius: 10px;
+    border: 1px solid hsl(0, 0%, 80%);
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    overflow-y: auto;
 }
-
 .inputField-overflow {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;
-    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 10%;
+    width: 96%;
     height: 100%;
-    gap: 2%;
-    padding: 1.5% 0%;
+    max-height: 100%;
+    row-gap: 2%;
     margin-inline: auto;
     overflow-y: auto;
 }
-
 .inputField-item-number{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 5% 51% 10% 1fr 5%;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". Label . InputField .";
     width: 100%;
-    height: 10%;
-    min-height: 10%;
-    gap: 2%;
-    margin-inline: auto;
+    height: 100%;
+    min-height: 100%;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
     background: var(--secondary-color-transparent);
 }
 .inputField-item-date{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+    display: grid;
+    grid-template-columns: 5% 15% 1% 35% 10% 1fr 5%;
+    grid-template-rows: 1fr;
+    grid-template-areas: ". Label . InputField . DeleteButton .";
     width: 100%;
-    height: 10%;
-    min-height: 10%;
-    gap: 2%;
+    height: 100%;
+    min-height: 100%;
     margin-inline: auto;
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 10px;
@@ -73,84 +64,98 @@
 }
 /* Style for input labels */
 .dateLabel {
-    color: var(--primary-text-color);
-    text-align: center;
-    font-size: 1dvw;
+    grid-area: Label;
+    width: 100%;
+    place-self: start;
+    align-self: center;
+    font-size: clamp(.5rem, 1.1svw, 1.5rem);
     font-family: var(--font-family);
-    margin-left: 5%;
+    color: var(--primary-text-color);
 }
 .Max-Participants {
-    color: var(--primary-text-color);
-    text-align: center;
-    font-size: 1dvw;
+    grid-area: Label;
+    width: 100%;
+    place-self: start;
+    align-self: center;
+    font-size: clamp(.5rem, 1.1svw, 1.5rem);
     font-family: var(--font-family);
-    margin-left: 5%;
+    color: var(--primary-text-color);
 }
 /* Style for input fields */
 .inputField-date {
+    grid-area: InputField;
+    width: 100%;
+    place-self: start;
+    align-self: center;
     text-align: center;
-    font-size: 1dvw;
+    font-size: clamp(.5rem, 1.1svw, 1.5rem);
     font-family: var(--font-family);
+    border: 1px solid black;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
     background: var(--secondary-text-color);
+    color: var(--primary-text-color);
 }
 .inputField-maxNumber {
-    width: 22%;
+    grid-area: InputField;
+    width: 100%;
+    place-self: start;
+    align-self: center;
     text-align: center;
-    font-size: 1dvw;
+    font-size: clamp(.5rem, 1.1svw, 1.5rem);
     font-family: var(--font-family);
+    border: 1px solid black;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
     background: var(--secondary-text-color);
+    color: var(--primary-text-color);
 }
 /* Style for buttons */
 .Add-button {
-    background: var(--third-color);
-    color: var(--primary-text-color);
     width: 100%;
-    height: 10%;
-    min-height: 10%;
+    height: 100%;
+    min-height: 100%;
     margin-inline: auto;
-    text-align: center;  /* Center text horizontally */
-    font-size: 1dvw;
+    text-align: center;
+    font-size: clamp(.5rem, 1.1svw, 1.5rem);;
     font-family: var(--font-family);
+    border: 1px solid black;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    background: var(--action-color);
+    color: var(--primary-text-color);
 }
 .Remove-button {
-    background: var(--third-color);
-    color: var(--primary-text-color);
-    width: 25%;
-    height: 50%;
-    margin-inline: auto;
-    text-align: center;  /* Center text horizontally */
-    font-size: 1dvw;
+    grid-area: DeleteButton;
+    width: 100%;
+    height: 65%;
+    place-self: start;
+    align-self: center;
+    text-align: center;
+    font-size: clamp(.5rem, 1.1svw, 1.5rem);
     font-family: var(--font-family);
-    border-radius: 7px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    background: var(--action-color);
+    color: var(--primary-text-color);
 }
 
 /* Style for the table container */
 .table-container {
-    container-type: inline-size;
-    display: flex;
+    grid-area: output;
     position: relative;
-    flex-direction: column;
-    justify-content: flex-start;
-    text-align: center;
-    width: calc(100% - 30% - 5%);
+    background: transparent;
+    width: 100%;
     height: 100%;
-    padding: 1.5% 0%;
-    /* border: 1px solid hsl(0, 0%, 80%); */
+    padding: 1rem 1rem;
     border-radius: 10px;
-    /* box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1); */
-    background: var(--card-color);
-    /* overflow-y: auto; */
+    border: 1px solid hsl(0, 0%, 80%);
+    box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
+    overflow-y: auto;
 }
-
 .table-item {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: flex-start; */
-    width: 90%;
+    width: 98%;
     height: 100%;
     min-height: 100%;
     margin-inline: auto;
@@ -158,46 +163,53 @@
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsl(0, 0%, 0%, 0.1);
     background: var(--secondary-color-transparent);
-    overflow-x: auto;
-    overflow-y: auto;
+    overflow: auto;
 }
-
 /* Style for the table */
 .datePage-table {
     border-collapse: collapse;
     width: 100%;
     min-width: 100%;
-    min-height: 15%;
-    overflow-x: auto;
-    
 }
 
+.datePage-thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
 /* Style for table headers */
 .datePage-th {
-    width: 300;
+    /* width: 300; */
     /* width: calc(100% / 3);
     min-width: calc(100% / 3);
     max-width: calc(100% / 3); */
-    text-align: center;
-    font-size: clamp(.75rem, 1.5svw, 2rem);
+    text-align: start;
+    padding-left: 1%;
+    font-size: clamp(.75rem, 1.4svw, 2rem);
+    font-family: var(--font-family);
     color: var(--primary-text-color);
     border: 1px solid var(--body_color);
+    /* border: 1px solid hsl(0, 0%, 80%); */
     background-color: var(--primary-color);
 }
 
 /* Style for table rows */
 .datePage-td {
-    padding: 8px;
     text-align: start;
-    font-size: clamp(.75rem, 1.5svw, 2rem);
+    padding-left: 1%;
+    font-size: clamp(.75rem, 1.2svw, 2rem);
+    font-family: var(--font-family);
     border: 1px solid var(--body_color);
-    background-color: var(--table-color); 
+    /* background-color: var(--table-color);  */
 }
 
 /* Alternate background color for odd rows */
-/* tr:nth-child(odd) {
-    background-color: #f9f9f9;
-} */
+tr:nth-child(odd) {
+    background-color: var(--table-color);
+}
+tr:nth-child(even) {
+    background-color: var(--background-color);
+}
 
 @media screen and (max-width: 500px) {
     .datePage-container {

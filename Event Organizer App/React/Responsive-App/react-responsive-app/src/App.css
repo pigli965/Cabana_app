@@ -57,24 +57,33 @@ body {
   display: grid;
   height: 100svh;
   width: 100svw;
-  grid-template-rows: 10svh 87svh 3svh;
   grid-template-columns: 1fr;
+  grid-template-rows: 10svh 81svh 3svh;
+  grid-template-areas: 
+    "Header"
+    "Content"
+    "Footer"
+  ;
+  row-gap: 3svh;
 
 }
  
 .app-header {
-  grid-row: 1;
-  grid-column: 1;
+  grid-area: Header;
+  /* grid-row: 1;
+  grid-column: 1; */
 }
 
 .app-content {
-  grid-row: 2;
+  grid-area: Content;
+  /* grid-row: 2; */
 }
 
 .app-sidebar {
-  grid-row: 2;
+  grid-area: Content;
+  /* grid-row: 2;
   grid-row-start: 2;
-  grid-row-end: 2;
+  grid-row-end: 2; */
 }
 
 .app-notification {
@@ -87,7 +96,8 @@ body {
 }
 
 .app-footer {
-  grid-row: 3;
+  grid-area: Footer;
+  /* grid-row: 3; */
 }
 
 .show-navBar2000 {

@@ -81,7 +81,7 @@ export const DatePage = ({ isSuccesful, setIsSuccesful, setIsDateValueAdded }) =
         <div className='inputField-overflow'>
           {/* Input fields for dates and maxParticipants */}
           <div className='inputField-item-number'>
-            <label className='Max-Participants'>Nr. maxim participati: </label>
+            <label className='Max-Participants'>Numar maxim participati: </label>
             <input 
               className='inputField-maxNumber' 
               type="number" 
@@ -132,7 +132,7 @@ export const DateTable = ({ dates, maxParticipants }) => {
 
   return (
     <table className='datePage-table' {...getTableProps()}>
-      <thead>
+      <thead className='datePage-thead'>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()} key="header">
             {headerGroup.headers.map((column, columnIndex) => (
