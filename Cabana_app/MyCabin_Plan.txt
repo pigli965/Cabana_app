@@ -1,0 +1,21 @@
+Vote Date - must have
+Location - should have
+Finance - must have
+Transport - must have
+Playlist - not have
+no. participants > capacity - not have
+party items - could have
+room alocation - should have
+
+
+Must Have:
+Vote Date
+Finance
+Transport
+
+Should have: [monetized]
+Location
+room alocation
+
+Could have:
+party items
