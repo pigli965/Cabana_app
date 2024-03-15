@@ -19,3 +19,83 @@ room alocation
 
 Could have:
 party items
+
+
+Diagnostic phase
+Rapid prototyping
+User testing
+
+Based on that we do:
+We go back and review what works and what doesn'testing
+And then propose a final model we prototype one more time
+We do a fnal test and then we go and build
+
+After this is going to go dark for a while client
+And then what we're going to do is we're going to have 2 checking points
+Then you'll have an opportunity to do final proffing, copy check and make sure everything works
+And we're going to deliver it, but the project is not done.. we've just delivered it
+Then we're going to stick around for 3 months to do quality assurance (Q&A) - because something inevitably breaks
+After that you might want to sign up for maintenance
+
+FOCUS ON 1 CLIENT!!!
+who are they and what sector are they in?
+do they have the capacity to pay you?
+are they hungry for a solution?
+do they experienced enough pain points that it's going to move them from a state of inaction to action?
+
+PAIN that they can experience is not on one dimension, is multi-dimensional:
+-personal
+-profesional
+-emotional
+-financial
+So the more pain they are going to experience in different dimensions, the more they're going to seek a solution for this.
+
+CAPACITY to PAY
+Fresh Supply of new clients all the time
+
+Example:
+You might do something beautiful like editorial design for magazines and newspapers and they want the solution.
+But the problem is that industry is going down.
+
+So the capacity to pay.. Ok they want it, sort of.. but they are losing ad revenue because every magazine you read is more thiner and thiner.
+There almost no ads in them anymore.
+Is that there is not a fresh supply of new clients. And that's the PROBLEM.
+End of Example.
+
+When the person who pays is not the person that needs it there is an amazing market there.
+So when the person who whips up the credit card or who signs a check is not the person who receives it, it's much easier to sell to.
+
+
+
+
+DAYLY BASIS TASKS: 
+-> Creates: 
+- FRICTION -> solution
+- FRUSTRATES -> solution
+- CHALLENGE -> solution
+
+Noteaza tot ce faci intr-o zi si gaseste orice iti creaza probleme/te enerveaza/te ingreuneaza/ iti creaza o provocare.
+Si vino cu idei despre cum sa le rezolvi.
+
+
+CREDIT CARD:
+- OVERPAID
+- UNDERDELIVERED
+
+Look on your credit card bill. Is going to itemize everything that you're spending money on.
+Anything that you think you overpaid that underd delivered that's an opportunity for you to do better.
+
+
+AVOIDANCE:
+- DOING
+- OUTCOME
+
+What are the things you're trying to avoid doing?
+What kind of negative outcomes you're trying to avoid?
+
+
+Ask AI:
+This is who I'm trying to target [someone in a domain]. They're established funded and they're either launching [this] or rebranding [something].
+They are doing [50 million dollar] anually plus. They are in the [country].
+I want you to create a typical day and give me what they're doing morning to night.
+Detailed list please.
